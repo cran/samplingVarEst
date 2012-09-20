@@ -16,13 +16,13 @@
 \details{
 For the population total of the variable \eqn{y}:
 \deqn{t = \sum_{k\in U} y_k}
-the approximately unbiased Hajek (1971) estimator of \eqn{t} (implemented by the current function) is given by:
+the approximately unbiased Hajek (1971) estimator of \eqn{t} is given by:
 \deqn{\hat{t}_{Hajek} = N \frac{\sum_{k\in s} w_k y_k}{\sum_{k\in s} w_k}}
 where \eqn{w_k=1/\pi_k} and \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}. If \eqn{s} is a self-weighted two-stage sample, the variance of \eqn{\hat{t}_{Hajek}} can be estimated by the Escobar-Berger (2013) jackknife variance estimator (implemented by the current function):
 \deqn{\hat{V}(\hat{t}_{Hajek}) = v_{clu} + v_{obs}}
 \deqn{v_{clu} = \sum_{i\in s} (1-\pi_{Ii}^{*}) \varsigma_{(Ii)}^{2} - \frac{1}{\hat{d}}\left(\sum_{i\in s} (1-\pi_{Ii}) \varsigma_{(Ii)}\right)^{2}}
-\deqn{v_{obs} = \sum_{k\in s} \phi_{k} \varepsilon_{(k)}^{2}}
-where \eqn{\hat{d}={\sum}_{i\in s}{(1-\pi_{Ii})}}, \eqn{\phi_{k} = I\{k\in s_{i}\}\pi_{Ii}^{*}(M_{i}-n_{II})/(M_{i}-1)}, \eqn{\pi_{Ii}^{*} = \pi_{Ii}n_{II}(M_{i}-1)/(n_{II}-1)M_{i}}, with \eqn{s_{i}} denoting the sample elements from the \eqn{i}-th cluster, \eqn{I\{k\in s_{i}\}} is an indicator that takes the value \eqn{1} if the \eqn{k}-th observation is within the \eqn{i}-th cluster and \eqn{0} otherwise, \eqn{\pi_{Ii}} is the inclusion probability of the \eqn{i}-th cluster in the sample \eqn{s}, \eqn{M_{i}} is the size of the \eqn{i}-th cluster, \eqn{n_{II}} is the sample size within each cluster, \eqn{n_{I}} is the number of sampled clusters, and where
+\deqn{v_{obs} = \sum_{k\in s} \phi_k \varepsilon_{(k)}^{2}}
+where \eqn{\hat{d}={\sum}_{i\in s}{(1-\pi_{Ii})}}, \eqn{\phi_k = I\{k\in s_{i}\}\pi_{Ii}^{*}(M_{i}-n_{II})/(M_{i}-1)}, \eqn{\pi_{Ii}^{*} = \pi_{Ii}n_{II}(M_{i}-1)/(n_{II}-1)M_{i}}, with \eqn{s_{i}} denoting the sample elements from the \eqn{i}-th cluster, \eqn{I\{k\in s_{i}\}} is an indicator that takes the value \eqn{1} if the \eqn{k}-th observation is within the \eqn{i}-th cluster and \eqn{0} otherwise, \eqn{\pi_{Ii}} is the inclusion probability of the \eqn{i}-th cluster in the sample \eqn{s}, \eqn{M_{i}} is the size of the \eqn{i}-th cluster, \eqn{n_{II}} is the sample size within each cluster, \eqn{n_{I}} is the number of sampled clusters, and where
 \deqn{\varsigma_{(Ii)}=\frac{n_{I}-1}{n_{I}} (\hat{t}_{Hajek}-\hat{t}_{Hajek(Ii)})}
 \deqn{\varepsilon_{(k)}=\frac{n-1}{n} (\hat{t}_{Hajek}-\hat{t}_{Hajek(k)})}
 where  \eqn{\hat{t}_{Hajek(Ii)}} and \eqn{\hat{t}_{Hajek(k)}} have the same functional form as \eqn{\hat{t}_{Hajek}} but omitting the \eqn{i}-th cluster and the \eqn{k}-th element, respectively, from the sample \eqn{s}.

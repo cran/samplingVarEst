@@ -10,8 +10,8 @@
 Let \eqn{\pi_k} denote the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}, and let \eqn{\pi_{kl}} denote the joint-inclusion probabilities of the \eqn{k}-th and \eqn{l}-th elements in the sample \eqn{s}. If the joint-inclusion probabilities \eqn{\pi_{kl}} are not available, the Hajek (1964) approximation can be used. Note that this approximation is designed for large-entropy sampling designs, large samples and large populations, i.e. care should be taken with highly-stratified samples, e.g. Berger (2005).
 
 The population based version of the Hajek (1964) approximation for the joint-inclusion probabilities \eqn{\pi_{kl}} (implemented by the current function) is:
-\deqn{\pi_{kl}  \doteq  \pi_{k} \pi_{l} \{1 - d^{-1}(1-\pi_{k})(1-\pi_{l})\}}
-where \eqn{d =\sum_{k\in U}\pi_{k}(1-\pi_{k})}.
+\deqn{\pi_{kl}  \doteq  \pi_k \pi_l \{1 - d^{-1}(1-\pi_k)(1-\pi_l)\}}
+where \eqn{d =\sum_{k\in U}\pi_k(1-\pi_k)}.
 
 The approximation was originally developed for \eqn{d\rightarrow\infty}, under the maximum-entropy sampling design (see Hajek 1981, Theorem 3.3, Ch. 3 and 6), the Rejective Sampling design. It requires that the utilised sampling design be of large entropy. An overview can be found in Berger and Tille (2009). An account of different sampling designs, \eqn{\pi_{kl}} approximations, and approximate variances under large-entropy designs can be found in Tille (2006), Brewer and Donadio (2003), and Haziza, Mecatti, and Rao (2008). Recently, Berger (2011) gave sufficient conditions under which Hajek's results still hold for large-entropy sampling designs that are not the maximum-entropy one.
   }
