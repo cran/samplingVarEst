@@ -43,7 +43,7 @@ Horvitz, D. G. and Thompson, D. J. (1952) A generalization of sampling without r
 }
 \author{Emilio Lopez Escobar.}
 \seealso{
-\code{\link{VE.Jk.Tukey.Ratio}}\cr\code{\link{VE.Jk.CBS.HT.Ratio}}\cr\code{\link{VE.Jk.CBS.SYG.Ratio}}\cr\code{\link{VE.Jk.B.Ratio}}\cr\code{\link{VE.Jk.EB.SW2.Ratio}}\cr\code{\link{VE.EB.SYG.Ratio}}
+\code{\link{VE.Lin.HT.Ratio}}\cr\code{\link{VE.Lin.SYG.Ratio}}\cr\code{\link{VE.Jk.Tukey.Ratio}}\cr\code{\link{VE.Jk.CBS.HT.Ratio}}\cr\code{\link{VE.Jk.CBS.SYG.Ratio}}\cr\code{\link{VE.Jk.B.Ratio}}\cr\code{\link{VE.Jk.EB.SW2.Ratio}}\cr\code{\link{VE.EB.SYG.Ratio}}
 }
 \examples{
 data(oaxaca)                                  #Loads the Oaxaca municipalities dataset

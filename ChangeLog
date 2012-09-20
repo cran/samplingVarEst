@@ -1,11 +1,26 @@
+
+
+version 0.9-8 2013-12-31
+
+ - Some linearisation variance estimators for the ratio point estimator are added.
+ - Restrictions on the input of n and N (sample and population sizes) are relaxed. It is
+   no longer needed that they are (formally) integers. They now can be double-precision
+   scalars with zero-valued fractional parts.
+ - When using the Tukey's Jackknife it is now optional to utilise a finite population co-
+   rrection (PFC). A logical argument that indicates whether to use it or not was added
+   to those functions that implement Tukey's jackknife variance estimators.
+ - Some polishing of the user's manual.
+
+
 version 0.9-7 2013-12-14
 
-    A point estimator for the intercept regresion coefficient is added.
-    Some variance estimators for the intercept regresion coefficient point estimator are added.
-    Some polishing of the user's manual.
+ - A point estimator for the intercept regression coefficient is added.
+ - Some variance estimators for the intercept regression coefficient point estimator are added.
+ - Some polishing of the user's manual.
+
 
 version 0.9-6 2013-09-03
 
-    Updating references and some polishing of the user's manual.
-    First ChangeLog entry.
+ - Updated references and some polishing of the user's manual.
+ - First ChangeLog entry.
 

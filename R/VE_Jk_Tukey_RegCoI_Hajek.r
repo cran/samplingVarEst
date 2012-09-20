@@ -1,4 +1,4 @@
-VE.Jk.Tukey.RegCoI.Hajek <- function(VecY.s, VecX.s, VecPk.s, N)
+VE.Jk.Tukey.RegCoI.Hajek <- function(VecY.s, VecX.s, VecPk.s, N, FPC= TRUE)
 {
   if(! is.vector(VecY.s)              ){stop("VecY.s must be a vector.")                                                                   }
   if(! is.vector(VecX.s)              ){stop("VecX.s must be a vector.")                                                                   }
@@ -7,8 +7,8 @@ VE.Jk.Tukey.RegCoI.Hajek <- function(VecY.s, VecX.s, VecPk.s, N)
   if(any(VecPk.s<=0|VecPk.s>1)        ){stop("There are invalid values in VecPk.s.")                                                       }
   if(any(is.na(VecY.s))               ){stop("There are missing values in VecY.s.")                                                        }
   if(any(is.na(VecX.s))               ){stop("There are missing values in VecX.s.")                                                        }
-  if(length(N) != 1                   ){stop("Value of N must be a scalar, i.e. a vector of length 1.")                                    }
-  if(! is.integer(N)                  ){stop(paste("N must be an integer, i.e. a value from 1 to", as.character(.Machine$integer.max),"."))}
+  if((length(N) != 1) & FPC           ){stop("Value of N must be a scalar, i.e. a vector of length 1.")                                    }
+  if((N%%1      != 0) & FPC           ){stop("N must be an integer or a double-precision scalar with zero-valued fractional part.")        }
   n                                    <- length(VecY.s)
   if(n != length(VecPk.s)             ){stop("The lengths of VecY.s and VecPk.s are different.")                                           }
   if(n != length(VecX.s)              ){stop("The lengths of VecY.s and VecX.s are different.")                                            }
@@ -23,7 +23,8 @@ VE.Jk.Tukey.RegCoI.Hajek <- function(VecY.s, VecX.s, VecPk.s, N)
                                               VectVarEst = double(n),
                                               PACKAGE = "samplingVarEst")$VectVarEst
   EstTheta                             <- Est.RegCoI.Hajek(VecY.s, VecX.s, VecPk.s)
-  OUTPUT                               <- (1-Doublen/DoubleN) * (Doublen-1)/Doublen * sum( (EstTheta - VecEstTheta_k)^2 )
+  OUTPUT                               <- (Doublen-1)/Doublen * sum( (EstTheta - VecEstTheta_k)^2 )
+  if(FPC                              ){OUTPUT <- (1-Doublen/DoubleN) * OUTPUT                                                             }
   if(OUTPUT<0                         ){warning("The variance estimate contains negative values.")                                         }
   OUTPUT
 }
