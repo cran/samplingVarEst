@@ -11,19 +11,22 @@
 For the population mean of the variable \eqn{y}:
 \deqn{\bar{y} = \frac{1}{N} \sum_{k\in U} y_k}
 the approximately unbiased Hajek (1971) estimator of \eqn{\bar{y}} is given by:
-\deqn{\hat{\bar{y}}_{Hajek} = \frac{\sum_{k\in s} w_k~y_k}{\sum_{k\in s} w_k}}
+\deqn{\hat{\bar{y}}_{Hajek} = \frac{\sum_{k\in s} w_k y_k}{\sum_{k\in s} w_k}}
 where \eqn{w_k=1/\pi_k} and \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}. The variance of \eqn{\hat{\bar{y}}_{Hajek}} can be estimated by the Berger (2007) unequal probability jackknife variance estimator (implemented by the current function):
-\deqn{\hat{V}(\hat{\bar{y}}_{Hajek}) = \sum_{k\in s} \frac{n}{n-1}(1-\pi_k)~\left(\varepsilon_k~-~\hat{B}\right)^{2}}
+\deqn{\hat{V}(\hat{\bar{y}}_{Hajek}) = \sum_{k\in s} \frac{n}{n-1}(1-\pi_k) \left(\varepsilon_k - \hat{B}\right)^{2}}
 where
-\deqn{\hat{B} = \frac{\sum_{k\in s}(1-\pi_k)~\varepsilon_k}{\sum_{k\in s}(1-\pi_k)}}
+\deqn{\hat{B} = \frac{\sum_{k\in s}(1-\pi_k) \varepsilon_k}{\sum_{k\in s}(1-\pi_k)}}
 and
-\deqn{\varepsilon_k = \left(1-\tilde{w}_k\right)~\left(\hat{\bar{y}}_{Hajek}-\hat{\bar{y}}_{Hajek(k)}\right)}
+\deqn{\varepsilon_k = \left(1-\tilde{w}_k\right) \left(\hat{\bar{y}}_{Hajek}-\hat{\bar{y}}_{Hajek(k)}\right)}
 with
 \deqn{\tilde{w}_k = \frac{w_k}{\sum_{l\in s} w_l}}
 and
-\deqn{\hat{\bar{y}}_{Hajek(k)} = \frac{\sum_{l\in s, l\neq k} w_l~y_l}{\sum_{l\in s, l\neq k} w_l}}
+\deqn{\hat{\bar{y}}_{Hajek(k)} = \frac{\sum_{l\in s, l\neq k} w_l y_l}{\sum_{l\in s, l\neq k} w_l}}
 Note that this variance estimator utilises implicitly the Hajek (1964) approximations that are designed for large-entropy sampling designs, large samples and large populations, i.e. care should be taken with highly-stratified samples, e.g. Berger (2005).
   }
+\value{
+The function returns a value for the estimated variance.
+}
 \references{
 Berger, Y. G. (2005) Variance estimation with highly stratified sampling designs with unequal probabilities. \emph{Australian & New Zealand Journal of Statistics}, \bold{47}, 365--373.
 

@@ -25,10 +25,10 @@ VE.Jk.B.RegCo.Hajek <- function(VecY.s, VecX.s, VecPk.s)
                                              as.integer(n), 
                                              PointEst = double(1), 
                                              PACKAGE = "samplingVarEst")$PointEst
-  VecPseudo_s                         <- (1 - {1/Nhat/VecPk.s}) * (EstTheta - VecEstTheta_k)
+  VecPseudo.s                         <- (1 - {1/Nhat/VecPk.s}) * (EstTheta - VecEstTheta_k)
   Doublen                             <- as.double(n)
   OUTPUT                              <- .C("VE_Hajek_form", 
-                                             as.double(VecPseudo_s),
+                                             as.double(VecPseudo.s),
                                              as.double(VecPk.s), 
                                              as.integer(n), 
                                              as.double(Doublen),

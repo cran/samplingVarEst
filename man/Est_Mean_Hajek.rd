@@ -11,9 +11,12 @@
 For the population mean of the variable \eqn{y}:
 \deqn{\bar{y} = \frac{1}{N} \sum_{k\in U} y_k}
 the approximately unbiased Hajek (1971) estimator of \eqn{\bar{y}} (implemented by the current function) is given by:
-\deqn{\hat{\bar{y}}_{Hajek} = \frac{\sum_{k\in s} w_k~y_k}{\sum_{k\in s} w_k}}
+\deqn{\hat{\bar{y}}_{Hajek} = \frac{\sum_{k\in s} w_k y_k}{\sum_{k\in s} w_k}}
 where \eqn{w_k=1/\pi_k} and \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}.
   }
+\value{
+The function returns a value for the mean point estimator.
+}
 \references{
 Hajek, J. (1971) Comment on \emph{An essay on the logical foundations of survey sampling} by Basu, D. in \emph{Foundations of Statistical Inference} (Godambe, V.P. and Sprott, D.A. eds.), p. 236. Holt, Rinehart and Winston.
 }

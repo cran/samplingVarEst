@@ -12,9 +12,12 @@
 For the population total of the variable \eqn{y}:
 \deqn{t = \sum_{k\in U} y_k}
 the approximately unbiased Hajek (1971) estimator of \eqn{t} (implemented by the current function) is given by:
-\deqn{\hat{t}_{Hajek} = N~\frac{\sum_{k\in s} w_k~y_k}{\sum_{k\in s} w_k}}
+\deqn{\hat{t}_{Hajek} = N \frac{\sum_{k\in s} w_k y_k}{\sum_{k\in s} w_k}}
 where \eqn{w_k=1/\pi_k} and \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}.
   }
+\value{
+The function returns a value for the total point estimator.
+}
 \references{
 Hajek, J. (1971) Comment on \emph{An essay on the logical foundations of survey sampling} by Basu, D. in \emph{Foundations of Statistical Inference} (Godambe, V.P. and Sprott, D.A. eds.), p. 236. Holt, Rinehart and Winston.
 }

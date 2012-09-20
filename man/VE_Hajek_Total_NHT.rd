@@ -22,6 +22,9 @@ where \eqn{\hat{d}=\sum_{k\in s}(1-\pi_k)} and \eqn{\hat{G}=\hat{d}^{-1}\sum_{k\
 
 Note that the Hajek (1964) variance approximation is designed for large-entropy sampling designs, large samples and large populations, i.e. care should be taken with highly-stratified samples, e.g. Berger (2005).
   }
+\value{
+The function returns a value for the estimated variance.
+}
 \references{
 Berger, Y. G. (2005) Variance estimation with highly stratified sampling designs with unequal probabilities. \emph{Australian & New Zealand Journal of Statistics}, \bold{47}, 365--373.
 
