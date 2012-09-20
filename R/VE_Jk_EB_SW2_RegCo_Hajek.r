@@ -21,11 +21,10 @@ VE.Jk.EB.SW2.RegCo.Hajek <- function(VecY.s, VecX.s, VecPk.s, nII, VecPi.s, VecC
   VecCluSize.sI                              <- VecCluSize.s[!duplicated(VecCluLab.s)]
   nI                                         <- length(VecPi.sI)
   DoublenI                                   <- as.double(nI)
-  if(n != as.integer(length(VecPk.s))       ){stop("The lengths of VecY.s and VecPk.s are different.")                                                                       }
-  if(n != as.integer(length(VecX.s))        ){stop("The lengths of VecY.s and VecX.s are different.")                                                                        }
-  if(n != as.integer(length(VecCluLab.s))   ){stop("The lengths of VecY.s and VecCluLab.s are different.")                                                                   }
+  if(n != length(VecPk.s)                   ){stop("The lengths of VecY.s and VecPk.s are different.")                                                                       }
+  if(n != length(VecX.s)                    ){stop("The lengths of VecY.s and VecX.s are different.")                                                                        }
+  if(n != length(VecCluLab.s)               ){stop("The lengths of VecY.s and VecCluLab.s are different.")                                                                   }
   if(n != as.integer(nI*nII)                ){stop("The lengths of VecY.s and (nI * nII) are different.")                                                                    }
-  if(any(VecX.s==0)                         ){stop("There are zero values in VecX.s. Division by zero is undefined.")                                                        }
   if(any(VecCluSize.s < nII)                ){stop("The value of nII is larger than the minimum cluster size in VecCluSize.s.")                                              }
   EstTheta                                   <- Est.RegCo.Hajek(VecY.s, VecX.s, VecPk.s)
   VarianceClusters                           <- .C("VE_Jk_EB_SW2_RegCo_Hajek_Clu",
