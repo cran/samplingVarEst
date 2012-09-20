@@ -44,25 +44,22 @@ Hajek, J. (1971) Comment on \emph{An essay on the logical foundations of survey 
 
 Sarndal, C.-E. and Swensson, B. and Wretman, J. (1992) \emph{Model Assisted Survey Sampling}. Springer-Verlag, Inc.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{VE.Jk.Tukey.Corr.Hajek}}\cr\code{\link{VE.Jk.CBS.HT.Corr.Hajek}}\cr\code{\link{VE.Jk.CBS.SYG.Corr.Hajek}}\cr\code{\link{VE.Jk.B.Corr.Hajek}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-s         <- oaxaca$sSW_10_3 #Defines the sample to be used
-SampData  <- oaxaca[s==1, ]  #Defines the sample dataset
-nII       <- 3               #Defines the 2nd stage fixed sample size
-#Defines the clusters' labels in the sample dataset
-CluLab.s  <- SampData$IDDISTRI 
-#Defines the clusters' sizes in the sample dataset
-CluSize.s <- SampData$SIZEDIST
-#Reconstructs clusters' 1st order incl. probs. in the sample dataset
-piIi.s    <- (10 * CluSize.s / 570)
-#Reconstructs elements' 1st order incl. probs. in the sample dataset
-pik.s     <- piIi.s * (nII/CluSize.s)
-y1.s      <- SampData$POP10    #Defines the variable y1
-y2.s      <- SampData$POPMAL10 #Defines the variable y2
-x.s       <- SampData$HOMES10  #Defines the variable x
+data(oaxaca)                          #Loads the Oaxaca municipalities dataset
+s         <- oaxaca$sSW_10_3          #Defines the sample to be used
+SampData  <- oaxaca[s==1, ]           #Defines the sample dataset
+nII       <- 3                        #Defines the 2nd stage fixed sample size
+CluLab.s  <- SampData$IDDISTRI        #Defines the clusters' labels
+CluSize.s <- SampData$SIZEDIST        #Defines the clusters' sizes
+piIi.s    <- (10 * CluSize.s / 570)   #Reconstructs clusters' 1st order incl. probs.
+pik.s     <- piIi.s * (nII/CluSize.s) #Reconstructs elements' 1st order incl. probs.
+y1.s      <- SampData$POP10           #Defines the variable y1
+y2.s      <- SampData$POPMAL10        #Defines the variable y2
+x.s       <- SampData$HOMES10         #Defines the variable x
 #Computes the var. est. of the corr. coeff. point estimator using y1
 VE.Jk.EB.SW2.Corr.Hajek(y1.s, x.s, pik.s, nII, piIi.s, CluLab.s, CluSize.s)
 #Computes the var. est. of the corr. coeff. point estimator using y2

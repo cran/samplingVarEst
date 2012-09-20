@@ -16,10 +16,11 @@
 \details{
 From Linear Regression Analysis, for an imposed population model
 \deqn{y=\alpha + \beta x}
-the population regression coefficient \eqn{\beta}, assuming that the population size \eqn{N} is unknown (see Sarndal et al., 1992, Sec. 5.9), can be estimated by:
+the population regression coefficient \eqn{\beta}, assuming that the population size \eqn{N} is unknown (see Sarndal et al., 1992, Sec. 5.10), can be estimated by:
 \deqn{\hat{\beta}_{Hajek} = \frac{\sum_{k\in s} w_k (y_k - \hat{\bar{y}}_{Hajek})(x_k - \hat{\bar{x}}_{Hajek})}{\sum_{k\in s} w_k (x_k - \hat{\bar{x}}_{Hajek})^2}}
-where \eqn{\hat{\bar{y}}_{Hajek}} is the Hajek (1971) point estimator of the population mean \eqn{\bar{y} = N^{-1} \sum_{k\in U} y_k},
+where \eqn{\hat{\bar{y}}_{Hajek}} and \eqn{\hat{\bar{x}}_{Hajek}} are the Hajek (1971) point estimators of the population means \eqn{\bar{y} = N^{-1} \sum_{k\in U} y_k} and \eqn{\bar{x} = N^{-1} \sum_{k\in U} x_k}, respectively,
 \deqn{\hat{\bar{y}}_{Hajek} = \frac{\sum_{k\in s} w_k y_k}{\sum_{k\in s} w_k}}
+\deqn{\hat{\bar{x}}_{Hajek} = \frac{\sum_{k\in s} w_k x_k}{\sum_{k\in s} w_k}}
 and \eqn{w_k=1/\pi_k} with \eqn{\pi_k} denoting the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}. If \eqn{s} is a self-weighted two-stage sample, the variance of \eqn{\hat{\beta}_{Hajek}} can be estimated by the Escobar-Berger (2013) jackknife variance estimator (implemented by the current function):
 \deqn{\hat{V}(\hat{\beta}_{Hajek}) = v_{clu} + v_{obs}}
 \deqn{v_{clu} = \sum_{i\in s} (1-\pi_{Ii}^{*}) \varsigma_{(Ii)}^{2} - \frac{1}{\hat{d}}\left(\sum_{i\in s} (1-\pi_{Ii}) \varsigma_{(Ii)}\right)^{2}}
@@ -44,25 +45,22 @@ Hajek, J. (1971) Comment on \emph{An essay on the logical foundations of survey 
 
 Sarndal, C.-E. and Swensson, B. and Wretman, J. (1992) \emph{Model Assisted Survey Sampling}. Springer-Verlag, Inc.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
-\code{\link{VE.Jk.Tukey.RegCo.Hajek}}\cr\code{\link{VE.Jk.CBS.HT.RegCo.Hajek}}\cr\code{\link{VE.Jk.CBS.SYG.RegCo.Hajek}}\cr\code{\link{VE.Jk.B.RegCo.Hajek}}
+\code{\link{VE.Jk.EB.SW2.RegCoI.Hajek}}\cr\code{\link{VE.Jk.Tukey.RegCo.Hajek}}\cr\code{\link{VE.Jk.CBS.HT.RegCo.Hajek}}\cr\code{\link{VE.Jk.CBS.SYG.RegCo.Hajek}}\cr\code{\link{VE.Jk.B.RegCo.Hajek}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-s         <- oaxaca$sSW_10_3 #Defines the sample to be used
-SampData  <- oaxaca[s==1, ]  #Defines the sample dataset
-nII       <- 3               #Defines the 2nd stage fixed sample size
-#Defines the clusters' labels in the sample dataset
-CluLab.s  <- SampData$IDDISTRI 
-#Defines the clusters' sizes in the sample dataset
-CluSize.s <- SampData$SIZEDIST
-#Reconstructs clusters' 1st order incl. probs. in the sample dataset
-piIi.s    <- (10 * CluSize.s / 570)
-#Reconstructs elements' 1st order incl. probs. in the sample dataset
-pik.s     <- piIi.s * (nII/CluSize.s)
-y1.s      <- SampData$POP10    #Defines the variable y1
-y2.s      <- SampData$POPMAL10 #Defines the variable y2
-x.s       <- SampData$HOMES10  #Defines the variable x
+data(oaxaca)                          #Loads the Oaxaca municipalities dataset
+s         <- oaxaca$sSW_10_3          #Defines the sample to be used
+SampData  <- oaxaca[s==1, ]           #Defines the sample dataset
+nII       <- 3                        #Defines the 2nd stage fixed sample size
+CluLab.s  <- SampData$IDDISTRI        #Defines the clusters' labels
+CluSize.s <- SampData$SIZEDIST        #Defines the clusters' sizes
+piIi.s    <- (10 * CluSize.s / 570)   #Reconstructs clusters' 1st order incl. probs.
+pik.s     <- piIi.s * (nII/CluSize.s) #Reconstructs elements' 1st order incl. probs.
+y1.s      <- SampData$POP10           #Defines the variable y1
+y2.s      <- SampData$POPMAL10        #Defines the variable y2
+x.s       <- SampData$HOMES10         #Defines the variable x
 #Computes the var. est. of the regression coeff. point estimator using y1
 VE.Jk.EB.SW2.RegCo.Hajek(y1.s, x.s, pik.s, nII, piIi.s, CluLab.s, CluSize.s)
 #Computes the var. est. of the regression coeff. point estimator using y2

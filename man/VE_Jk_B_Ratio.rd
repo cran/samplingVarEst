@@ -35,17 +35,17 @@ Berger, Y. G. (2007) A jackknife variance estimator for unistage stratified samp
 
 Hajek, J. (1964) Asymptotic theory of rejective sampling with varying probabilities from a finite population. \emph{The Annals of Mathematical Statistics}, \bold{35}, 4, 1491--1523.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{VE.Jk.Tukey.Ratio}}\cr\code{\link{VE.Jk.CBS.HT.Ratio}}\cr\code{\link{VE.Jk.CBS.SYG.Ratio}}\cr\code{\link{VE.Jk.EB.SW2.Ratio}}\cr\code{\link{VE.EB.HT.Ratio}}\cr\code{\link{VE.EB.SYG.Ratio}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U  <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s      <- oaxaca$sHOMES00 #Defines the sample to be used for the example
-y1     <- oaxaca$POP10    #Defines the numerator variable of interest y1
-y2     <- oaxaca$POPMAL10 #Defines the numerator variable of interest y2
-x      <- oaxaca$HOMES10  #Defines the denominator variable of interest x
+data(oaxaca)                                 #Loads the Oaxaca municipalities dataset
+pik.U  <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s      <- oaxaca$sHOMES00                    #Defines the sample to be used
+y1     <- oaxaca$POP10                       #Defines the numerator variable y1
+y2     <- oaxaca$POPMAL10                    #Defines the numerator variable y2
+x      <- oaxaca$HOMES10                     #Defines the denominator variable x
 #Computes the var. est. of the ratio point estimator using y1
 VE.Jk.B.Ratio(y1[s==1], x[s==1], pik.U[s==1])
 #Computes the var. est. of the ratio point estimator using y2

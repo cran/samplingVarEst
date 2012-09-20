@@ -21,19 +21,19 @@ The function returns a value for the total point estimator.
 \references{
 Hajek, J. (1971) Comment on \emph{An essay on the logical foundations of survey sampling} by Basu, D. in \emph{Foundations of Statistical Inference} (Godambe, V.P. and Sprott, D.A. eds.), p. 236. Holt, Rinehart and Winston.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{Est.Total.NHT}}\cr\code{\link{VE.Jk.Tukey.Total.Hajek}}\cr\code{\link{VE.Jk.CBS.HT.Total.Hajek}}\cr\code{\link{VE.Jk.CBS.SYG.Total.Hajek}}\cr\code{\link{VE.Jk.B.Total.Hajek}}\cr\code{\link{VE.Jk.EB.SW2.Total.Hajek}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s     <- oaxaca$sHOMES00 #Defines the sample to be used for the example
-N     <- dim(oaxaca)[1]  #Defines the population size
-y1    <- oaxaca$POP10    #Defines the variable of interest y1
-y2    <- oaxaca$HOMES10  #Defines the variable of interest y2
-Est.Total.Hajek(y1[s==1], pik.U[s==1], N) #The Hajek estimator for y1
-Est.Total.Hajek(y2[s==1], pik.U[s==1], N) #The Hajek estimator for y2
+data(oaxaca)                                #Loads the Oaxaca municipalities dataset
+pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s     <- oaxaca$sHOMES00                    #Defines the sample to be used
+N     <- dim(oaxaca)[1]                     #Defines the population size
+y1    <- oaxaca$POP10                       #Defines the variable y1
+y2    <- oaxaca$HOMES10                     #Defines the variable y2
+Est.Total.Hajek(y1[s==1], pik.U[s==1], N)   #The Hajek estimator for y1
+Est.Total.Hajek(y2[s==1], pik.U[s==1], N)   #The Hajek estimator for y2
 }
 \keyword{point estimation}
 \keyword{total}

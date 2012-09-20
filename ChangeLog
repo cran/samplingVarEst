@@ -1,3 +1,9 @@
+version 0.9-7 2013-12-14
+
+    A point estimator for the intercept regresion coefficient is added.
+    Some variance estimators for the intercept regresion coefficient point estimator are added.
+    Some polishing of the user's manual.
+
 version 0.9-6 2013-09-03
 
     Updating references and some polishing of the user's manual.

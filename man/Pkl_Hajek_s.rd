@@ -35,16 +35,16 @@ Haziza, D., Mecatti, F. and Rao, J. N. K. (2008) Evaluation of some approximate 
 
 Tille, Y. (2006) \emph{Sampling Algorithms.} Springer, New York.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{Pkl.Hajek.U}}\cr\code{\link{Pk.PropNorm.U}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U  <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s      <- oaxaca$sHOMES00 #Defines the sample to be used for the example
+data(oaxaca)                                 #Loads the Oaxaca municipalities dataset
+pik.U  <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s      <- oaxaca$sHOMES00                    #Defines the sample to be used
 #This approximation is only suitable for large-entropy sampling designs
-pikl.s <- Pkl.Hajek.s(pik.U[s==1]) #Approx. 2nd order incl. probs. from s
+pikl.s <- Pkl.Hajek.s(pik.U[s==1])           #Approx. 2nd order incl. probs. from s
 #First 5 rows/cols of (sample based) 2nd order incl. probs. matrix
 pikl.s[1:5,1:5]
 }

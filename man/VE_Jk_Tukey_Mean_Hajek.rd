@@ -33,17 +33,17 @@ Tukey, J. W. (1958) Bias and confidence in not-quite large samples (abstract). \
 
 Wolter, K. M. (2007) \emph{Introduction to Variance Estimation}. 2nd Ed. Springer, Inc.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{VE.Jk.CBS.HT.Mean.Hajek}}\cr\code{\link{VE.Jk.CBS.SYG.Mean.Hajek}}\cr\code{\link{VE.Jk.B.Mean.Hajek}}\cr\code{\link{VE.Jk.EB.SW2.Mean.Hajek}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s     <- oaxaca$sHOMES00 #Defines the sample to be used for the example
-N     <- dim(oaxaca)[1]  #Defines the population size
-y1    <- oaxaca$POP10    #Defines the variable of interest y1
-y2    <- oaxaca$POPMAL10 #Defines the variable of interest y2
+data(oaxaca)                                #Loads the Oaxaca municipalities dataset
+pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s     <- oaxaca$sHOMES00                    #Defines the sample to be used
+N     <- dim(oaxaca)[1]                     #Defines the population size
+y1    <- oaxaca$POP10                       #Defines the variable of interest y1
+y2    <- oaxaca$POPMAL10                    #Defines the variable of interest y2
 #Computes the var. est. of the Hajek mean point estimator using y1
 VE.Jk.Tukey.Mean.Hajek(y1[s==1], pik.U[s==1], N)
 #Computes the var. est. of the Hajek mean point estimator using y2
