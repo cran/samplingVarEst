@@ -1,0 +1,5 @@
+useDynLib(samplingVarEst) 
+
+# Export all names
+exportPattern(".")
+
