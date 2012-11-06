@@ -13,11 +13,14 @@
 For the population correlation coefficient of two variables \eqn{y} and \eqn{x}:
 \deqn{C = \frac{\sum_{k\in U} (y_k - \bar{y})(x_k - \bar{x})}{\sqrt{\sum_{k\in U} (y_k - \bar{y})^2}\sqrt{\sum_{k\in U} (x_k - \bar{x})^2}}}
 the point estimator of \eqn{C} (implemented by the current function) is given by:
-\deqn{\hat{C} = \frac{\sum_{k\in s} w_k~(y_k - \hat{\bar{y}}_{NHT})(x_k - \hat{\bar{x}}_{NHT})}{\sqrt{\sum_{k\in s} w_k~(y_k - \hat{\bar{y}}_{NHT})^2}\sqrt{\sum_{k\in s} w_k~(x_k - \hat{\bar{x}}_{NHT})^2}}}
+\deqn{\hat{C} = \frac{\sum_{k\in s} w_k (y_k - \hat{\bar{y}}_{NHT})(x_k - \hat{\bar{x}}_{NHT})}{\sqrt{\sum_{k\in s} w_k (y_k - \hat{\bar{y}}_{NHT})^2}\sqrt{\sum_{k\in s} w_k (x_k - \hat{\bar{x}}_{NHT})^2}}}
 where \eqn{\hat{\bar{y}}_{NHT}} is the Narain (1951); Horvitz-Thompson (1952) estimator for the population mean \eqn{\bar{y} = N^{-1} \sum_{k\in U} y_k},
-\deqn{\hat{\bar{y}}_{NHT} = \frac{1}{N}\sum_{k\in s} w_k~y_k}
+\deqn{\hat{\bar{y}}_{NHT} = \frac{1}{N}\sum_{k\in s} w_k y_k}
 and \eqn{w_k=1/\pi_k} with \eqn{\pi_k} denoting the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}.
   }
+\value{
+The function returns a value for the correlation coefficient point estimator.
+}
 \references{
 Horvitz, D. G. and Thompson, D. J. (1952) A generalization of sampling without replacement from a finite universe. \emph{Journal of the American Statistical Association}, \bold{47}, 663--685.
 

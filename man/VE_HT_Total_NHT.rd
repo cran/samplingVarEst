@@ -18,6 +18,9 @@ where \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in
 which can therefore be estimated by the Horvitz-Thompson variance estimator (implemented by the current function):
 \deqn{\hat{V}(\hat{t}_{NHT}) = \sum_{k\in s}\sum_{l\in s} \frac{\pi_{kl}-\pi_k\pi_l}{\pi_{kl}}\frac{y_k}{\pi_k}\frac{y_l}{\pi_l}}
   }
+\value{
+The function returns a value for the estimated variance.
+}
 \references{
 Horvitz, D. G. and Thompson, D. J. (1952) A generalization of sampling without replacement from a finite universe. \emph{Journal of the American Statistical Association}, \bold{47}, 663--685.
 

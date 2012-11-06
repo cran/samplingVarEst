@@ -13,17 +13,20 @@
 For the population ratio of two totals/means of the variables \eqn{y} and \eqn{x}:
 \deqn{R = \frac{\sum_{k\in U} y_k/N}{\sum_{k\in U} x_k/N} = \frac{\sum_{k\in U} y_k}{\sum_{k\in U} x_k}}
 the ratio estimator of \eqn{R} is given by:
-\deqn{\hat{R} = \frac{\sum_{k\in s} w_k~y_k}{\sum_{k\in s} w_k~x_k}}
+\deqn{\hat{R} = \frac{\sum_{k\in s} w_k y_k}{\sum_{k\in s} w_k x_k}}
 where \eqn{w_k=1/\pi_k} and \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}. The variance of \eqn{\hat{R}} can be estimated by the Campbell(1980); Berger-Skinner(2005) unequal probability jackknife variance estimator (implemented by the current function):
-\deqn{\hat{V}(\hat{R}) = \frac{-1}{2}\sum_{k\in s}\sum_{l\in s} \frac{\pi_{kl}-\pi_k\pi_l}{\pi_{kl}}~(\varepsilon_k~-~\varepsilon_l)^{2}}
+\deqn{\hat{V}(\hat{R}) = \frac{-1}{2}\sum_{k\in s}\sum_{l\in s} \frac{\pi_{kl}-\pi_k\pi_l}{\pi_{kl}} (\varepsilon_k - \varepsilon_l)^{2}}
 where
-\deqn{\varepsilon_k = \left(1-\tilde{w}_k\right)~\left(\hat{R}-\hat{R}_{(k)}\right)}
+\deqn{\varepsilon_k = \left(1-\tilde{w}_k\right) \left(\hat{R}-\hat{R}_{(k)}\right)}
 with
 \deqn{\tilde{w}_k = \frac{w_k}{\sum_{l\in s} w_l}}
 and
-\deqn{\hat{R}_{(k)} = \frac{\sum_{l\in s, l\neq k} w_l~y_l/\sum_{l\in s, l\neq k} w_l}{\sum_{l\in s, l\neq k} w_l~x_l/\sum_{l\in s, l\neq k} w_l} = \frac{\sum_{l\in s, l\neq k} w_l~y_l}{\sum_{l\in s, l\neq k} w_l~x_l}}
+\deqn{\hat{R}_{(k)} = \frac{\sum_{l\in s, l\neq k} w_l y_l/\sum_{l\in s, l\neq k} w_l}{\sum_{l\in s, l\neq k} w_l x_l/\sum_{l\in s, l\neq k} w_l} = \frac{\sum_{l\in s, l\neq k} w_l y_l}{\sum_{l\in s, l\neq k} w_l x_l}}
 The Sen-Yates-Grundy form for the Campbell(1980); Berger-Skinner(2005) unequal probability jackknife variance estimator is proposed in Escobar-Berger (2013) under less-restrictive regularity conditions.
   }
+\value{
+The function returns a value for the estimated variance.
+}
 \references{
 Campbell, C. (1980) A different view of finite population estimation. \emph{Proceedings of the Survey Research Methods Section of the American Statistical Association}, 319--324.
 

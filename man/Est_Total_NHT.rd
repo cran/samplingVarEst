@@ -14,6 +14,9 @@ the unbiased Narain (1951); Horvitz-Thompson (1952) estimator of \eqn{t} (implem
 \deqn{\hat{t}_{NHT} = \sum_{k\in s} \frac{y_k}{\pi_k}}
 where \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}.
   }
+\value{
+The function returns a value for the total point estimator.
+}
 \references{
 Horvitz, D. G. and Thompson, D. J. (1952) A generalization of sampling without replacement from a finite universe. \emph{Journal of the American Statistical Association}, \bold{47}, 663--685.
 

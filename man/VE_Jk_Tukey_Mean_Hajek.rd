@@ -12,13 +12,16 @@
 For the population mean of the variable \eqn{y}:
 \deqn{\bar{y} = \frac{1}{N} \sum_{k\in U} y_k}
 the approximately unbiased Hajek (1971) estimator of \eqn{\bar{y}} is given by:
-\deqn{\hat{\bar{y}}_{Hajek} = \frac{\sum_{k\in s} w_k~y_k}{\sum_{k\in s} w_k}}
+\deqn{\hat{\bar{y}}_{Hajek} = \frac{\sum_{k\in s} w_k y_k}{\sum_{k\in s} w_k}}
 where \eqn{w_k=1/\pi_k} and \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}. The variance of \eqn{\hat{\bar{y}}_{Hajek}} can be estimated by the Quenouille(1956); Tukey (1958) jackknife variance estimator (implemented by the current function):
 \deqn{\hat{V}(\hat{\bar{y}}_{Hajek}) = \left(1-\frac{n}{N}\right)\frac{n-1}{n}\sum_{k\in s} \left( \hat{\bar{y}}_{Hajek(k)}-\hat{\bar{y}}_{Hajek} \right)^2}
 where
-\deqn{\hat{\bar{y}}_{Hajek(k)} = \frac{\sum_{l\in s, l\neq k} w_l~y_l}{\sum_{l\in s, l\neq k} w_l}}
+\deqn{\hat{\bar{y}}_{Hajek(k)} = \frac{\sum_{l\in s, l\neq k} w_l y_l}{\sum_{l\in s, l\neq k} w_l}}
 Note that we are implementing the Tukey (1958) jackknife variance estimator using the `ad hoc' finite population correction \eqn{1-n/N} (see Shao and Tu, 1995; Wolter, 2007).
   }
+\value{
+The function returns a value for the estimated variance.
+}
 \references{
 Hajek, J. (1971) Comment on \emph{An essay on the logical foundations of survey sampling} by Basu, D. in \emph{Foundations of Statistical Inference} (Godambe, V.P. and Sprott, D.A. eds.), p. 236. Holt, Rinehart and Winston.
 

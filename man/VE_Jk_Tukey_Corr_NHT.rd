@@ -13,15 +13,18 @@
 For the population correlation coefficient of two variables \eqn{y} and \eqn{x}:
 \deqn{C = \frac{\sum_{k\in U} (y_k - \bar{y})(x_k - \bar{x})}{\sqrt{\sum_{k\in U} (y_k - \bar{y})^2}\sqrt{\sum_{k\in U} (x_k - \bar{x})^2}}}
 the point estimator of \eqn{C} is given by:
-\deqn{\hat{C} = \frac{\sum_{k\in s} w_k~(y_k - \hat{\bar{y}}_{NHT})(x_k - \hat{\bar{x}}_{NHT})}{\sqrt{\sum_{k\in s} w_k~(y_k - \hat{\bar{y}}_{NHT})^2}\sqrt{\sum_{k\in s} w_k~(x_k - \hat{\bar{x}}_{NHT})^2}}}
+\deqn{\hat{C} = \frac{\sum_{k\in s} w_k (y_k - \hat{\bar{y}}_{NHT})(x_k - \hat{\bar{x}}_{NHT})}{\sqrt{\sum_{k\in s} w_k (y_k - \hat{\bar{y}}_{NHT})^2}\sqrt{\sum_{k\in s} w_k (x_k - \hat{\bar{x}}_{NHT})^2}}}
 where \eqn{\hat{\bar{y}}_{NHT}} is the Narain (1951); Horvitz-Thompson (1952) estimator for the population mean \eqn{\bar{y} = N^{-1} \sum_{k\in U} y_k},
-\deqn{\hat{\bar{y}}_{NHT} = \frac{1}{N}\sum_{k\in s} w_k~y_k}
+\deqn{\hat{\bar{y}}_{NHT} = \frac{1}{N}\sum_{k\in s} w_k y_k}
 and \eqn{w_k=1/\pi_k} with \eqn{\pi_k} denoting the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}. The variance of \eqn{\hat{C}} can be estimated by the Quenouille(1956); Tukey (1958) jackknife variance estimator (implemented by the current function):
 \deqn{\hat{V}(\hat{C}) = \left(1-\frac{n}{N}\right)\frac{n-1}{n}\sum_{k\in s} \left( \hat{C}_{(k)}-\hat{C} \right)^2}
 where \eqn{\hat{C}_{(k)}} has the same functional form as \eqn{\hat{C}} but omitting the \eqn{k}-th element from the sample \eqn{s}.
 Note that we are implementing the Tukey (1958) jackknife variance estimator using the `ad hoc' finite population correction \eqn{1-n/N} (see Shao and Tu, 1995; Wolter, 2007).
 
   }
+\value{
+The function returns a value for the estimated variance.
+}
 \references{
 Horvitz, D. G. and Thompson, D. J. (1952) A generalization of sampling without replacement from a finite universe. \emph{Journal of the American Statistical Association}, \bold{47}, 663--685.
 

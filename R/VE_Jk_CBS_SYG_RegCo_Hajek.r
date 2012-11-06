@@ -33,9 +33,9 @@ VE.Jk.CBS.SYG.RegCo.Hajek <- function(VecY.s, VecX.s, VecPk.s, MatPkl.s)
                                              as.integer(n),
                                              PointEst = double(1),
                                              PACKAGE = "samplingVarEst")$PointEst
-  VecPseudo_s                         <- (1 - {1/Nhat/VecPk.s}) * (EstTheta - VecEstTheta_k)
+  VecPseudo.s                         <- (1 - {1/Nhat/VecPk.s}) * (EstTheta - VecEstTheta_k)
   OUTPUT                              <- .C("VE_SYG_form",
-                                             as.double(VecPseudo_s),
+                                             as.double(VecPseudo.s),
                                              as.double(VecPk.s),
                                              as.double(c(MatPkl.s)),
                                              as.integer(n),

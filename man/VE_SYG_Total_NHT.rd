@@ -18,6 +18,9 @@ where \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in
 which, if the utilised sampling design is of fixed-size, can therefore be estimated by the Sen-Yates-Grundy variance estimator (implemented by the current function):
 \deqn{\hat{V}(\hat{t}_{NHT}) = \frac{-1}{2}\sum_{k\in s}\sum_{l\in s} \frac{\pi_{kl}-\pi_k\pi_l}{\pi_{kl}}\left(\frac{y_k}{\pi_k}-\frac{y_l}{\pi_l}\right)^2}
   }
+\value{
+The function returns a value for the estimated variance.
+}
 \references{
 Horvitz, D. G. and Thompson, D. J. (1952) A generalization of sampling without replacement from a finite universe. \emph{Journal of the American Statistical Association}, \bold{47}, 663--685.
 
