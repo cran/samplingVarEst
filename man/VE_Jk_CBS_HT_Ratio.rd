@@ -34,7 +34,7 @@ Berger, Y. G. and Skinner, C. J. (2005) A jackknife variance estimator for unequ
 Horvitz, D. G. and Thompson, D. J. (1952) A generalization of sampling without replacement from a finite universe. \emph{Journal of the American Statistical Association}, \bold{47}, 663--685.
 }
 \seealso{
-\code{\link{VE.Jk.Tukey.Ratio}}\cr\code{\link{VE.Jk.CBS.SYG.Ratio}}\cr\code{\link{VE.Jk.B.Ratio}}\cr\code{\link{VE.Jk.EB.SW2.Ratio}}
+\code{\link{VE.Jk.Tukey.Ratio}}\cr\code{\link{VE.Jk.CBS.SYG.Ratio}}\cr\code{\link{VE.Jk.B.Ratio}}\cr\code{\link{VE.Jk.EB.SW2.Ratio}}\cr\code{\link{VE.EB.HT.Ratio}}\cr\code{\link{VE.EB.SYG.Ratio}}
 }
 \examples{
 data(oaxaca) #Loads the Oaxaca municipalities dataset
