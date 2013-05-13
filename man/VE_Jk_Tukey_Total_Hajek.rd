@@ -11,7 +11,7 @@
 \details{
 For the population total of the variable \eqn{y}:
 \deqn{t = \sum_{k\in U} y_k}
-the approximately unbiased Hajek (1971) estimator of \eqn{t} (implemented by the current function) is given by:
+the approximately unbiased Hajek (1971) estimator of \eqn{t} is given by:
 \deqn{\hat{t}_{Hajek} = N \frac{\sum_{k\in s} w_k y_k}{\sum_{k\in s} w_k}}
 where \eqn{w_k=1/\pi_k} and \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}. The variance of \eqn{\hat{t}_{Hajek}} can be estimated by the Quenouille(1956); Tukey (1958) jackknife variance estimator (implemented by the current function):
 \deqn{\hat{V}(\hat{t}_{Hajek}) = \left(1-\frac{n}{N}\right)\frac{n-1}{n}\sum_{k\in s} \left( \hat{t}_{Hajek(k)}-\hat{t}_{Hajek} \right)^2}

@@ -25,6 +25,8 @@ The user has to pick a suitable combination of: a population parameter of intere
                                                        \tab\code{\link{VE.Jk.CBS.HT.Total.Hajek}}              \cr
                                                        \tab\code{\link{VE.Jk.CBS.SYG.Total.Hajek}}             \cr
                                                        \tab\code{\link{VE.Jk.B.Total.Hajek}}                   \cr
+                                                       \tab\code{\link{VE.EB.HT.Total.Hajek}}                  \cr
+                                                       \tab\code{\link{VE.EB.SYG.Total.Hajek}}                 \cr
              \code{Est.Mean.NHT}:                      \tab\code{\link{VE.HT.Mean.NHT}}                        \cr
                                                        \tab\code{\link{VE.SYG.Mean.NHT}}                       \cr
                                                        \tab\code{\link{VE.Hajek.Mean.NHT}}                     \cr
@@ -32,6 +34,8 @@ The user has to pick a suitable combination of: a population parameter of intere
                                                        \tab\code{\link{VE.Jk.CBS.HT.Mean.Hajek}}               \cr
                                                        \tab\code{\link{VE.Jk.CBS.SYG.Mean.Hajek}}              \cr
                                                        \tab\code{\link{VE.Jk.B.Mean.Hajek}}                    \cr
+                                                       \tab\code{\link{VE.EB.HT.Mean.Hajek}}                   \cr
+                                                       \tab\code{\link{VE.EB.SYG.Mean.Hajek}}                  \cr
              \code{Est.Ratio}:                         \tab\code{\link{VE.Jk.Tukey.Ratio}}                     \cr
                                                        \tab\code{\link{VE.Jk.CBS.HT.Ratio}}                    \cr
                                                        \tab\code{\link{VE.Jk.CBS.SYG.Ratio}}                   \cr
@@ -55,12 +59,12 @@ The user has to pick a suitable combination of: a population parameter of intere
              \code{Est.Corr.Hajek}:           \tab\code{\link{VE.Jk.EB.SW2.Corr.Hajek}}               \cr
              \code{Est.RegCo.Hajek}:          \tab\code{\link{VE.Jk.EB.SW2.RegCo.Hajek}}
 }
-\tabular{ll}{ \bold{For the inclusion probabilities:}               \tab\bold{The available functions} are:\cr
-              1st order inclusion probabilities:                       \tab\code{\link{Pk.PropNorm.U}}                         \cr
-              2nd order (joint) inclusion probabilities:                      \tab\code{\link{Pkl.Hajek.s}}                           \cr
+\tabular{ll}{ \bold{For the inclusion probabilities:}              \tab\bold{The available functions} are:  \cr
+              1st order inclusion probabilities:                   \tab\code{\link{Pk.PropNorm.U}}          \cr
+              2nd order (joint) inclusion probabilities:           \tab\code{\link{Pkl.Hajek.s}}            \cr
                                                                    \tab\code{\link{Pkl.Hajek.U}}
 }
-\tabular{l}{                                                       \bold{datasets}                                         \cr
+\tabular{l}{                                                       \bold{datasets}                          \cr
                                                                    \code{\link{oaxaca}}
 }
 }
