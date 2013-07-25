@@ -11,9 +11,9 @@ Est.Ratio <- function(VecY.s, VecX.s, VecPk.s)
   if(n != length(VecPk.s)             ){stop("The lengths of VecY.s and VecPk.s are different.")               }
   if(n != length(VecX.s)              ){stop("The lengths of VecY.s and VecX.s are different.")                }
   if(length(VecPk.s) != length(VecX.s)){stop("The lengths of VecPk.s and VecX.s are different.")               }
-  if(any(VecX.s==0)                   ){stop("There are zero values in VecX.s. Division by zero is undefined.")}
-  .C("Est_Ratio", 
-      as.double(VecY.s), 
+  if(any(VecX.s==0)                   ){warning("There are zero values in the denominator variable VecX.s.")   }
+  .C("Est_Ratio",
+      as.double(VecY.s),
       as.double(VecX.s), 
       as.double(VecPk.s), 
       as.integer(n), 

@@ -13,7 +13,7 @@ VE.Jk.Tukey.Ratio <- function(VecY.s, VecX.s, VecPk.s, N)
   if(n != length(VecPk.s)             ){stop("The lengths of VecY.s and VecPk.s are different.")                                           }
   if(n != length(VecX.s)              ){stop("The lengths of VecY.s and VecX.s are different.")                                            }
   if(length(VecPk.s) != length(VecX.s)){stop("The lengths of VecPk.s and VecX.s are different.")                                           }
-  if(any(VecX.s==0)                   ){stop("There are zero values in VecX.s. Division by zero is undefined.")                            }
+  if(any(VecX.s==0)                   ){warning("There are zero values in the denominator variable VecX.s.")                               }
   DoubleN                              <- as.double(N)
   Doublen                              <- as.double(n)
   VecEstTheta_k                        <- .C("Est_Ratio_Excluding_All_Elements",
