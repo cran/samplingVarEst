@@ -7,11 +7,11 @@ VE.EB.SYG.Total.Hajek(VecY.s, VecPk.s, MatPkl.s, N,
                       VecAlpha.s = rep(1, times=length(VecPk.s)))
 }
 \arguments{
-\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of VecPk.s. There must not be any missing value.}
-\item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in VecPk.s must be greater than zero and less than or equal to one. There must not be any missing value.}
-\item{MatPkl.s}{matrix of the second-order inclusion probabilities; its number of rows and columns is equal to \eqn{n}, the sample size. Values in MatPkl.s must be greater than zero and less than or equal to one. There must not be any missing value.}
+\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s}. There must not be any missing value.}
+\item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be any missing value.}
+\item{MatPkl.s}{matrix of the second-order inclusion probabilities; its number of rows and columns is equal to \eqn{n}, the sample size. Values in \code{MatPkl.s} must be greater than zero and less than or equal to one. There must not be any missing value.}
 \item{N}{the population size.}
-\item{VecAlpha.s}{vector of the \eqn{\alpha_k} values; its length is equal to \eqn{n}, the sample size. Values in VecAlpha.s can be different for each unit and they must be greater or equal to zero. Escobar-Berger (2013) showed that this replicate variance estimator is valid for \eqn{\alpha_k\geq 0}. In particular, they suggest using \eqn{\alpha_k=1} for all units in the sample (the default for VecAlpha.s if omitted in the function call). Using \eqn{\alpha_k>1} results in approximating the Demnati-Rao (2004) linearisation variance estimators. There must not be any missing value.}
+\item{VecAlpha.s}{vector of the \eqn{\alpha_k} values; its length is equal to \eqn{n}, the sample size. Values in \code{VecAlpha.s} can be different for each unit and they must be greater or equal to zero. Escobar-Berger (2013) showed that this replicate variance estimator is valid for \eqn{\alpha_k\geq 0}. In particular, they suggest using \eqn{\alpha_k=1} for all units in the sample (the default for \code{VecAlpha.s} if omitted in the function call). Using \eqn{\alpha_k>1} results in approximating the Demnati-Rao (2004) linearisation variance estimators. There must not be any missing value.}
 }
 \details{
 For the population total of the variable \eqn{y}:
@@ -35,7 +35,7 @@ Demnati, A. and Rao, J. N. K. (2004) Linearization variance estimators for surve
 
 Escobar, E. L. and Berger, Y. G. (2011) Jackknife variance estimation for functions of Horvitz-Thompson estimators under unequal probability sampling without replacement. In Proceeding of the \emph{58th World Statistics Congress}. Dublin, Ireland: International Statistical Institute.
 
-Escobar, E. L. and Berger, Y. G. (2013) A new replicate variance estimator for unequal probability sampling without replacement. \emph{Canadian Journal of Statistics} (to appear).
+Escobar, E. L. and Berger, Y. G. (2013) A new replicate variance estimator for unequal probability sampling without replacement. \emph{Canadian Journal of Statistics} \bold{41}, 3, 508--524.
 
 Gateaux, R. (1919) Fonctions d'une infinite de variables indeependantes. \emph{Bulletin de la Societe Mathematique de France}, \bold{47}, 70--96.
 
