@@ -26,18 +26,18 @@ Horvitz, D. G. and Thompson, D. J. (1952) A generalization of sampling without r
 
 Narain, R. D. (1951) On sampling without replacement with varying probabilities. \emph{Journal of the Indian Society of Agricultural Statistics}, \bold{3}, 169--175.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{Est.Corr.Hajek}}\cr\code{\link{VE.Jk.Tukey.Corr.NHT}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s     <- oaxaca$sHOMES00 #Defines the sample to be used for the example
-N     <- dim(oaxaca)[1]  #Defines the population size
-y1    <- oaxaca$POP10    #Defines the variable of interest y1
-y2    <- oaxaca$POPMAL10 #Defines the variable of interest y2
-x     <- oaxaca$HOMES10  #Defines the variable of interest x
+data(oaxaca)                                #Loads the Oaxaca municipalities dataset
+pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s     <- oaxaca$sHOMES00                    #Defines the sample to be used
+N     <- dim(oaxaca)[1]                     #Defines the population size
+y1    <- oaxaca$POP10                       #Defines the variable of interest y1
+y2    <- oaxaca$POPMAL10                    #Defines the variable of interest y2
+x     <- oaxaca$HOMES10                     #Defines the variable of interest x
 #Computes the correlation coefficient estimator for y1 and x
 Est.Corr.NHT(y1[s==1], x[s==1], pik.U[s==1], N)
 #Computes the correlation coefficient estimator for y2 and x

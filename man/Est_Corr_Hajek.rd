@@ -25,17 +25,17 @@ Hajek, J. (1971) Comment on \emph{An essay on the logical foundations of survey 
 
 Sarndal, C.-E. and Swensson, B. and Wretman, J. (1992) \emph{Model Assisted Survey Sampling}. Springer-Verlag, Inc.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{Est.Corr.NHT}}\cr\code{\link{VE.Jk.Tukey.Corr.Hajek}}\cr\code{\link{VE.Jk.CBS.HT.Corr.Hajek}}\cr\code{\link{VE.Jk.CBS.SYG.Corr.Hajek}}\cr\code{\link{VE.Jk.B.Corr.Hajek}}\cr\code{\link{VE.Jk.EB.SW2.Corr.Hajek}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s     <- oaxaca$sHOMES00 #Defines the sample to be used for the example
-y1    <- oaxaca$POP10    #Defines the variable of interest y1
-y2    <- oaxaca$POPMAL10 #Defines the variable of interest y2
-x     <- oaxaca$HOMES10  #Defines the variable of interest x
+data(oaxaca)                                #Loads the Oaxaca municipalities dataset
+pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s     <- oaxaca$sHOMES00                    #Defines the sample to be used
+y1    <- oaxaca$POP10                       #Defines the variable of interest y1
+y2    <- oaxaca$POPMAL10                    #Defines the variable of interest y2
+x     <- oaxaca$HOMES10                     #Defines the variable of interest x
 #Computes the correlation coefficient estimator for y1 and x
 Est.Corr.Hajek(y1[s==1], x[s==1], pik.U[s==1])
 #Computes the correlation coefficient estimator for y2 and x

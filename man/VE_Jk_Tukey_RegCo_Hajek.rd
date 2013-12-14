@@ -12,10 +12,11 @@
 \details{
 From Linear Regression Analysis, for an imposed population model
 \deqn{y=\alpha + \beta x}
-the population regression coefficient \eqn{\beta}, assuming that the population size \eqn{N} is unknown (see Sarndal et al., 1992, Sec. 5.9), can be estimated by:
+the population regression coefficient \eqn{\beta}, assuming that the population size \eqn{N} is unknown (see Sarndal et al., 1992, Sec. 5.10), can be estimated by:
 \deqn{\hat{\beta}_{Hajek} = \frac{\sum_{k\in s} w_k (y_k - \hat{\bar{y}}_{Hajek})(x_k - \hat{\bar{x}}_{Hajek})}{\sum_{k\in s} w_k (x_k - \hat{\bar{x}}_{Hajek})^2}}
-where \eqn{\hat{\bar{y}}_{Hajek}} is the Hajek (1971) point estimator of the population mean \eqn{\bar{y} = N^{-1} \sum_{k\in U} y_k},
+where \eqn{\hat{\bar{y}}_{Hajek}} and \eqn{\hat{\bar{x}}_{Hajek}} are the Hajek (1971) point estimators of the population means \eqn{\bar{y} = N^{-1} \sum_{k\in U} y_k} and \eqn{\bar{x} = N^{-1} \sum_{k\in U} x_k}, respectively,
 \deqn{\hat{\bar{y}}_{Hajek} = \frac{\sum_{k\in s} w_k y_k}{\sum_{k\in s} w_k}}
+\deqn{\hat{\bar{x}}_{Hajek} = \frac{\sum_{k\in s} w_k x_k}{\sum_{k\in s} w_k}}
 and \eqn{w_k=1/\pi_k} with \eqn{\pi_k} denoting the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}. The variance of \eqn{\hat{\beta}_{Hajek}} can be estimated by the Quenouille(1956); Tukey (1958) jackknife variance estimator (implemented by the current function):
 \deqn{\hat{V}(\hat{\beta}_{Hajek}) = \left(1-\frac{n}{N}\right)\frac{n-1}{n}\sum_{k\in s} \left( \hat{\beta}_{Hajek(k)}-\hat{\beta}_{Hajek} \right)^2}
 where \eqn{\hat{\beta}_{Hajek(k)}} has the same functional form as \eqn{\hat{\beta}_{Hajek}} but omitting the \eqn{k}-th element from the sample \eqn{s}.
@@ -38,18 +39,18 @@ Tukey, J. W. (1958) Bias and confidence in not-quite large samples (abstract). \
 
 Wolter, K. M. (2007) \emph{Introduction to Variance Estimation}. 2nd Ed. Springer, Inc.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
-\code{\link{VE.Jk.CBS.HT.RegCo.Hajek}}\cr\code{\link{VE.Jk.CBS.SYG.RegCo.Hajek}}\cr\code{\link{VE.Jk.B.RegCo.Hajek}}\cr\code{\link{VE.Jk.EB.SW2.RegCo.Hajek}}
+\code{\link{VE.Jk.Tukey.RegCoI.Hajek}}\cr\code{\link{VE.Jk.CBS.HT.RegCo.Hajek}}\cr\code{\link{VE.Jk.CBS.SYG.RegCo.Hajek}}\cr\code{\link{VE.Jk.B.RegCo.Hajek}}\cr\code{\link{VE.Jk.EB.SW2.RegCo.Hajek}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s     <- oaxaca$sHOMES00 #Defines the sample to be used for the example
-N     <- dim(oaxaca)[1]  #Defines the population size
-y1    <- oaxaca$POP10    #Defines the variable of interest y1
-y2    <- oaxaca$POPMAL10 #Defines the variable of interest y2
-x     <- oaxaca$HOMES10  #Defines the variable of interest x
+data(oaxaca)                                #Loads the Oaxaca municipalities dataset
+pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s     <- oaxaca$sHOMES00                    #Defines the sample to be used
+N     <- dim(oaxaca)[1]                     #Defines the population size
+y1    <- oaxaca$POP10                       #Defines the variable of interest y1
+y2    <- oaxaca$POPMAL10                    #Defines the variable of interest y2
+x     <- oaxaca$HOMES10                     #Defines the variable of interest x
 #Computes the var. est. of the regression coeff. point estimator using y1
 VE.Jk.Tukey.RegCo.Hajek(y1[s==1], x[s==1], pik.U[s==1], N)
 #Computes the var. est. of the regression coeff. point estimator using y2

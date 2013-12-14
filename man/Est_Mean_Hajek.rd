@@ -20,18 +20,18 @@ The function returns a value for the mean point estimator.
 \references{
 Hajek, J. (1971) Comment on \emph{An essay on the logical foundations of survey sampling} by Basu, D. in \emph{Foundations of Statistical Inference} (Godambe, V.P. and Sprott, D.A. eds.), p. 236. Holt, Rinehart and Winston.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{Est.Mean.NHT}}\cr\code{\link{VE.Jk.Tukey.Mean.Hajek}}\cr\code{\link{VE.Jk.CBS.HT.Mean.Hajek}}\cr\code{\link{VE.Jk.CBS.SYG.Mean.Hajek}}\cr\code{\link{VE.Jk.B.Mean.Hajek}}\cr\code{\link{VE.Jk.EB.SW2.Mean.Hajek}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s     <- oaxaca$sHOMES00 #Defines the sample to be used for the example
-y1    <- oaxaca$POP10    #Defines the variable of interest y1
-y2    <- oaxaca$HOMES10  #Defines the variable of interest y2
-Est.Mean.Hajek(y1[s==1], pik.U[s==1]) #Computes the Hajek est. for y1
-Est.Mean.Hajek(y2[s==1], pik.U[s==1]) #Computes the Hajek est. for y2
+data(oaxaca)                                #Loads the Oaxaca municipalities dataset
+pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s     <- oaxaca$sHOMES00                    #Defines the sample to be used
+y1    <- oaxaca$POP10                       #Defines the variable of interest y1
+y2    <- oaxaca$HOMES10                     #Defines the variable of interest y2
+Est.Mean.Hajek(y1[s==1], pik.U[s==1])       #Computes the Hajek est. for y1
+Est.Mean.Hajek(y2[s==1], pik.U[s==1])       #Computes the Hajek est. for y2
 }
 \keyword{point estimation}
 \keyword{mean}

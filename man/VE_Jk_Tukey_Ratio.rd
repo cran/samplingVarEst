@@ -33,18 +33,18 @@ Tukey, J. W. (1958) Bias and confidence in not-quite large samples (abstract). \
 
 Wolter, K. M. (2007) \emph{Introduction to Variance Estimation}. 2nd Ed. Springer, Inc.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{VE.Jk.CBS.HT.Ratio}}\cr\code{\link{VE.Jk.CBS.SYG.Ratio}}\cr\code{\link{VE.Jk.B.Ratio}}\cr\code{\link{VE.Jk.EB.SW2.Ratio}}\cr\code{\link{VE.EB.HT.Ratio}}\cr\code{\link{VE.EB.SYG.Ratio}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s     <- oaxaca$sHOMES00 #Defines the sample to be used for the example
-N     <- dim(oaxaca)[1]  #Defines the population size
-y1    <- oaxaca$POP10    #Defines the numerator variable of interest y1
-y2    <- oaxaca$POPMAL10 #Defines the numerator variable of interest y2
-x     <- oaxaca$HOMES10  #Defines the denominator variable of interest x
+data(oaxaca)                                #Loads the Oaxaca municipalities dataset
+pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s     <- oaxaca$sHOMES00                    #Defines the sample to be used
+N     <- dim(oaxaca)[1]                     #Defines the population size
+y1    <- oaxaca$POP10                       #Defines the numerator variable y1
+y2    <- oaxaca$POPMAL10                    #Defines the numerator variable y2
+x     <- oaxaca$HOMES10                     #Defines the denominator variable x
 #Computes the var. est. of the ratio point estimator using y1
 VE.Jk.Tukey.Ratio(y1[s==1], x[s==1], pik.U[s==1], N)
 #Computes the var. est. of the ratio point estimator using y2

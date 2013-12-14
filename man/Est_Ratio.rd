@@ -25,19 +25,19 @@ Horvitz, D. G. and Thompson, D. J. (1952) A generalization of sampling without r
 
 Narain, R. D. (1951) On sampling without replacement with varying probabilities. \emph{Journal of the Indian Society of Agricultural Statistics}, \bold{3}, 169--175.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{VE.Jk.Tukey.Ratio}}\cr\code{\link{VE.Jk.CBS.HT.Ratio}}\cr\code{\link{VE.Jk.CBS.SYG.Ratio}}\cr\code{\link{VE.Jk.B.Ratio}}\cr\code{\link{VE.Jk.EB.SW2.Ratio}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s     <- oaxaca$sHOMES00 #Defines the sample to be used for the example
-y1    <- oaxaca$POP10    #Defines the numerator variable of interest y1
-y2    <- oaxaca$POPMAL10 #Defines the numerator variable of interest y2
-x     <- oaxaca$HOMES10  #Defines the denominator variable of interest x
-Est.Ratio(y1[s==1], x[s==1], pik.U[s==1]) #Ratio estimator for y1 and x
-Est.Ratio(y2[s==1], x[s==1], pik.U[s==1]) #Ratio estimator for y2 and x
+data(oaxaca)                                #Loads the Oaxaca municipalities dataset
+pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s     <- oaxaca$sHOMES00                    #Defines the sample to be used
+y1    <- oaxaca$POP10                       #Defines the numerator variable y1
+y2    <- oaxaca$POPMAL10                    #Defines the numerator variable y2
+x     <- oaxaca$HOMES10                     #Defines the denominator variable x
+Est.Ratio(y1[s==1], x[s==1], pik.U[s==1])   #Ratio estimator for y1 and x
+Est.Ratio(y2[s==1], x[s==1], pik.U[s==1])   #Ratio estimator for y2 and x
 }
 \keyword{point estimation}
 \keyword{ratio}

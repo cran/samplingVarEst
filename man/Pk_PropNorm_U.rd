@@ -15,14 +15,15 @@ The function returns a vector of length \eqn{n} with the inclusion probabilities
 \references{
 Chao, M. T. (1982) A general purpose unequal probability sampling plan. \emph{Biometrika} \bold{69}, 653--656.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{Pkl.Hajek.s}}\cr\code{\link{Pkl.Hajek.U}}
 }
 \examples{
 data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Creates the normalised 1st order incl. probs. proportional
-#to the variable oaxaca$HOMES00 and with sample size 373
-pik.U        <- Pk.PropNorm.U(373, oaxaca$HOMES00)
+             #Creates the normalised 1st order incl. probs. proportional
+             #to the variable oaxaca$HOMES00 and with sample size 373
+pik.U <- Pk.PropNorm.U(373, oaxaca$HOMES00)
 sum(pik.U)   #Shows the sum is equal to the sample size 373
 any(pik.U>1) #Shows there isn't any probability greater than 1
 any(pik.U<0) #Shows there isn't any probability less than 0

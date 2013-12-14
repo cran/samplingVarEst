@@ -33,19 +33,19 @@ Berger, Y. G. and Skinner, C. J. (2005) A jackknife variance estimator for unequ
 
 Horvitz, D. G. and Thompson, D. J. (1952) A generalization of sampling without replacement from a finite universe. \emph{Journal of the American Statistical Association}, \bold{47}, 663--685.
 }
+\author{Emilio Lopez Escobar.}
 \seealso{
 \code{\link{VE.Jk.Tukey.Ratio}}\cr\code{\link{VE.Jk.CBS.SYG.Ratio}}\cr\code{\link{VE.Jk.B.Ratio}}\cr\code{\link{VE.Jk.EB.SW2.Ratio}}\cr\code{\link{VE.EB.HT.Ratio}}\cr\code{\link{VE.EB.SYG.Ratio}}
 }
 \examples{
-data(oaxaca) #Loads the Oaxaca municipalities dataset
-#Reconstructs the 1st order incl. probs. for the example
-pik.U  <- Pk.PropNorm.U(373, oaxaca$HOMES00)
-s      <- oaxaca$sHOMES00 #Defines the sample to be used for the example
-y1     <- oaxaca$POP10    #Defines the numerator variable of interest y1
-y2     <- oaxaca$POPMAL10 #Defines the numerator variable of interest y2
-x      <- oaxaca$HOMES10  #Defines the denominator variable of interest x
+data(oaxaca)                                 #Loads the Oaxaca municipalities dataset
+pik.U  <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. probs.
+s      <- oaxaca$sHOMES00                    #Defines the sample to be used
+y1     <- oaxaca$POP10                       #Defines the numerator variable y1
+y2     <- oaxaca$POPMAL10                    #Defines the numerator variable y2
+x      <- oaxaca$HOMES10                     #Defines the denominator variable x
 #This approximation is only suitable for large-entropy sampling designs
-pikl.s <- Pkl.Hajek.s(pik.U[s==1]) #Approx. 2nd order incl. probs. from s
+pikl.s <- Pkl.Hajek.s(pik.U[s==1])           #Approx. 2nd order incl. probs. from s
 #Computes the var. est. of the ratio point estimator using y1
 VE.Jk.CBS.HT.Ratio(y1[s==1], x[s==1], pik.U[s==1], pikl.s)
 #Computes the var. est. of the ratio point estimator using y2

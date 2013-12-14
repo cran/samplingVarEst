@@ -55,7 +55,7 @@ void VE_Jk_EB_SW2_RegCo_Hajek_Clu
         SUMYX           = SUMYX            + (VecY_s[k]-EstMeanY) * (VecX_s[k]-EstMeanX) / VecPk_s[k] ;
         SUMXX           = SUMXX            + (VecX_s[k]-EstMeanX) * (VecX_s[k]-EstMeanX) / VecPk_s[k] ;
       } ;
-    EstRegCoYX_iTemp    = SUMYX            / SUMXX                      ; //Weights' corrections get canceled.
+    EstRegCoYX_iTemp    = SUMYX            / SUMXX                                                    ; //Weights' corrections get canceled.
     PseudosCluTemp      = EstRegCoYX_iTemp - (*EstTheta)                                              ;
     SUM_PseudosClu      = SUM_PseudosClu   + VectQIi_sI[i]     * PseudosCluTemp                       ;
     SUM_SQPseudosClu    = SUM_SQPseudosClu + VectQIiSTAR_sI[i] * PseudosCluTemp * PseudosCluTemp      ;
