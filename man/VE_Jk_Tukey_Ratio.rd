@@ -2,12 +2,13 @@
 \alias{VE.Jk.Tukey.Ratio}
 \title{The Tukey (1958) jackknife variance estimator for the estimator of a ratio}
 \description{Computes the Quenouille(1956); Tukey (1958) jackknife variance estimator for the estimator of a ratio of two totals/means.  }
-\usage{VE.Jk.Tukey.Ratio(VecY.s, VecX.s, VecPk.s, N)}
+\usage{VE.Jk.Tukey.Ratio(VecY.s, VecX.s, VecPk.s, N, FPC= TRUE)}
 \arguments{
 \item{VecY.s}{vector of the numerator variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecX.s}. There must not be any missing value.}
 \item{VecX.s}{vector of the denominator variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecY.s}. There must not be any missing value. All values of \code{VecX.s} should be greater than zero. A warning is displayed if this does not hold and computations continue if mathematical expressions allow these kind of values for the denominator variable.}
 \item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be any missing value.}
-\item{N}{the population size.}
+\item{N}{the population size. It must be an integer or a double-precision scalar with zero-valued fractional part. This information is also utilised for the finite population correction, see \code{FPC} below.}
+\item{FPC}{logical value. If an ad hoc finite population correction \eqn{FPC=1-n/N} is to be used. The default is TRUE.}
 }
 \details{
 For the population ratio of two totals/means of the variables \eqn{y} and \eqn{x}:
@@ -18,8 +19,7 @@ where \eqn{w_k=1/\pi_k} and \eqn{\pi_k} denotes the inclusion probability of the
 \deqn{\hat{V}(\hat{R}) = \left(1-\frac{n}{N}\right)\frac{n-1}{n}\sum_{k\in s} \left( \hat{R}_{(k)}-\hat{R} \right)^2}
 where
 \deqn{\hat{R}_{(k)} = \frac{\sum_{l\in s, l\neq k} w_l y_l}{\sum_{l\in s, l\neq k} w_l x_l}}
-Note that we are implementing the Tukey (1958) jackknife variance estimator using the `ad hoc' finite population correction \eqn{1-n/N} (see Shao and Tu, 1995; Wolter, 2007).
-
+Note that we are implementing the Tukey (1958) jackknife variance estimator using the `ad hoc' finite population correction \eqn{1-n/N} (see Shao and Tu, 1995; Wolter, 2007). If \code{FPC=FALSE} then the term \eqn{1-n/N} is ommited from the above formula.
   }
 \value{
 The function returns a value for the estimated variance.
@@ -35,7 +35,7 @@ Wolter, K. M. (2007) \emph{Introduction to Variance Estimation}. 2nd Ed. Springe
 }
 \author{Emilio Lopez Escobar.}
 \seealso{
-\code{\link{VE.Jk.CBS.HT.Ratio}}\cr\code{\link{VE.Jk.CBS.SYG.Ratio}}\cr\code{\link{VE.Jk.B.Ratio}}\cr\code{\link{VE.Jk.EB.SW2.Ratio}}\cr\code{\link{VE.EB.HT.Ratio}}\cr\code{\link{VE.EB.SYG.Ratio}}
+\code{\link{VE.Lin.HT.Ratio}}\cr\code{\link{VE.Lin.SYG.Ratio}}\cr\code{\link{VE.Jk.CBS.HT.Ratio}}\cr\code{\link{VE.Jk.CBS.SYG.Ratio}}\cr\code{\link{VE.Jk.B.Ratio}}\cr\code{\link{VE.Jk.EB.SW2.Ratio}}\cr\code{\link{VE.EB.HT.Ratio}}\cr\code{\link{VE.EB.SYG.Ratio}}
 }
 \examples{
 data(oaxaca)                                #Loads the Oaxaca municipalities dataset
@@ -48,7 +48,7 @@ x     <- oaxaca$HOMES10                     #Defines the denominator variable x
 #Computes the var. est. of the ratio point estimator using y1
 VE.Jk.Tukey.Ratio(y1[s==1], x[s==1], pik.U[s==1], N)
 #Computes the var. est. of the ratio point estimator using y2
-VE.Jk.Tukey.Ratio(y2[s==1], x[s==1], pik.U[s==1], N)
+VE.Jk.Tukey.Ratio(y2[s==1], x[s==1], pik.U[s==1], N, FPC= FALSE)
 }
 \keyword{variance estimation}
 \keyword{ratio}

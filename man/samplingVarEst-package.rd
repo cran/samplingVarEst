@@ -37,7 +37,9 @@ The user has to pick a suitable combination of: a population parameter of intere
                                                        \tab\code{\link{VE.Jk.B.Mean.Hajek}}                    \cr
                                                        \tab\code{\link{VE.EB.HT.Mean.Hajek}}                   \cr
                                                        \tab\code{\link{VE.EB.SYG.Mean.Hajek}}                  \cr
-             \code{Est.Ratio}:                         \tab\code{\link{VE.Jk.Tukey.Ratio}}                     \cr
+             \code{Est.Ratio}:                         \tab\code{\link{VE.Lin.HT.Ratio}}                       \cr
+                                                       \tab\code{\link{VE.Lin.SYG.Ratio}}                      \cr
+                                                       \tab\code{\link{VE.Jk.Tukey.Ratio}}                     \cr
                                                        \tab\code{\link{VE.Jk.CBS.HT.Ratio}}                    \cr
                                                        \tab\code{\link{VE.Jk.CBS.SYG.Ratio}}                   \cr
                                                        \tab\code{\link{VE.Jk.B.Ratio}}                         \cr

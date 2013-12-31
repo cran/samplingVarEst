@@ -8,7 +8,7 @@ Est.Corr.NHT <- function(VecY.s, VecX.s, VecPk.s, N)
   if(any(is.na(VecY.s))               ){stop("There are missing values in VecY.s.")                                                        }
   if(any(is.na(VecX.s))               ){stop("There are missing values in VecX.s.")                                                        }
   if(length(N) != 1                   ){stop("Value of N must be a scalar, i.e. a vector of length 1.")                                    }
-  if(! is.integer(N)                  ){stop(paste("N must be an integer, i.e. a value from 1 to", as.character(.Machine$integer.max),"."))}
+  if(N%%1 != 0                        ){stop("N must be an integer or a double-precision scalar with zero-valued fractional part.")        }
   n                                    <- length(VecY.s)
   if(n != length(VecPk.s)             ){stop("The lengths of VecY.s and VecPk.s are different.")                                           }
   if(n != length(VecX.s)              ){stop("The lengths of VecY.s and VecX.s are different.")                                            }

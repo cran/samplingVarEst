@@ -11,7 +11,7 @@
 \item{VecPi.s}{vector of the clusters' first-order inclusion probabilities; its length is equal to \eqn{n}, the total sample size. Hence values are expected to be repeated in the utilised sample dataset. Values in \code{VecPi.s} must be greater than zero and less than or equal to one. There must not be any missing value.}
 \item{VecCluLab.s}{vector of the clusters' labels for the elements; its length is equal to \eqn{n}, the total sample size. The labels must be integer numbers.}
 \item{VecCluSize.s}{vector of the clusters' sizes; its length is equal to \eqn{n}, the total sample size. Hence values are expected to be repeated in the utilised sample dataset. None of the sizes must be smaller than \code{nII}.}
-\item{N}{the population size.}
+\item{N}{the population size. It must be an integer or a double-precision scalar with zero-valued fractional part.}
 }
 \details{
 For the population total of the variable \eqn{y}:
