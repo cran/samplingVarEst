@@ -1,5 +1,10 @@
 
 
+version 0.9-9 2014-05-13
+
+ - Updated maintainer's email address.
+
+
 version 0.9-8 2013-12-31
 
  - Some linearisation variance estimators for the ratio point estimator are added.
