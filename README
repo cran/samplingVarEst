@@ -15,7 +15,8 @@ available at http://www.r-project.org/Licenses/
 -------------------
 
 This package contains the samplingVarEst (Sampling Variance Estimation) package
-version 0.9-9 for R.
+version 1.0-1 for R.
 
-Authors: Emilio Lopez Escobar <emilio@numerika.mx>
-         Ernesto Barrios Zamudio
+Authors: Emilio Lopez Escobar       [aut, cre, cph] <emilio@numerika.mx>
+         Ernesto Barrios Zamudio    [ctb]           <ebarrios@itam.mx>
+         Juan Francisco Munoz Rosas [ctb]           <jfmunoz@go.ugr.es>

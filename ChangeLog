@@ -1,8 +1,17 @@
 
 
+
+version 1.0-1 2016-01-02
+
+ - Two point estimators for the empirical cumulative distribution function were added.
+ - Some polishing of the user's manual.
+
+
+
 version 0.9-9 2014-05-13
 
  - Updated maintainer's email address.
+
 
 
 version 0.9-8 2013-12-31
@@ -17,6 +26,7 @@ version 0.9-8 2013-12-31
  - Some polishing of the user's manual.
 
 
+
 version 0.9-7 2013-12-14
 
  - A point estimator for the intercept regression coefficient is added.
@@ -24,8 +34,10 @@ version 0.9-7 2013-12-14
  - Some polishing of the user's manual.
 
 
+
 version 0.9-6 2013-09-03
 
  - Updated references and some polishing of the user's manual.
  - First ChangeLog entry.
+
 

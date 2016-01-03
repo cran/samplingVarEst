@@ -1,17 +1,19 @@
 Package: samplingVarEst
-Version: 0.9-9
-Date: 2012-09-20
+Version: 1.0-1
+Date: 2016-01-02
 Title: Sampling Variance Estimation
-Author: Emilio Lopez Escobar [aut, cre], Ernesto Barrios Zamudio [ctb] <ebarrios@itam.mx>
+Author: Emilio Lopez Escobar [aut, cre, cph] <emilio@numerika.mx>,
+        Ernesto Barrios Zamudio [ctb] <ebarrios@itam.mx>,
+        Juan Francisco Munoz Rosas [ctb] <jfmunoz@go.ugr.es>
 Maintainer: Emilio Lopez Escobar <emilio@numerika.mx>
-Description: Functions to calculate some point estimators and estimating their variance under unequal probability sampling. Single and two stage sampling designs are considered. Some approximations for the second order inclusion probabilities are also available (sample and population based).
+Description: Functions to calculate some point estimators and estimating their variance under unequal probability sampling without replacement. Single and two stage sampling designs are considered. Some approximations for the second order inclusion probabilities are also available (sample and population based).
 Classification/MSC: 62D05, 62F40, 62G09, 62H12
 Classification/JEL: C13, C15, C42, C83
 Classification/ACM: G.3
 Depends: R (>= 3.0.0)
 License: GPL (>= 2)
-URL: http://www.numerika.mx
-Packaged: 2014-05-13 18:20:28 UTC; ELOPEZE
+URL: http://www.numerika.mx, http://www.itam.mx
 NeedsCompilation: yes
+Packaged: 2016-01-03 01:34:45 UTC; maley
 Repository: CRAN
-Date/Publication: 2014-05-13 21:11:38
+Date/Publication: 2016-01-03 16:14:16

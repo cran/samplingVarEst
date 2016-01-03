@@ -6,12 +6,13 @@ vers <- paste("R package version", meta$Version)
 citEntry(entry = "Manual",
          title = "samplingVarEst: Sampling Variance Estimation",
          author = personList(as.person("Emilio Lopez Escobar"),
-                             as.person("Ernesto Barrios Zamudio")),
+                             as.person("Ernesto Barrios Zamudio"),
+                             as.person("Juan Francisco Munoz Rosas")),
          year = year,
          note = vers,
 
          textVersion =
-         paste0("Emilio Lopez Escobar and Ernesto Barrios Zamudio (",
+         paste0("Emilio Lopez Escobar, Ernesto Barrios Zamudio and Juan Francisco Munoz Rosas (",
                 year,
                 "). samplingVarEst: Sampling Variance Estimation. ",
                 vers, "."))

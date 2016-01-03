@@ -2,7 +2,7 @@
 \alias{samplingVarEst-package}
 \alias{samplingVarEst}
 \title{Sampling Variance Estimation package}
-\description{The package contains functions to calculate some point estimators and estimating their variance under unequal-probability sampling. Uni-stage and two-stage sampling designs are considered. The package further contains some approximations for the joint-inclusion probabilities (population and sample based formulae).\cr
+\description{The package contains functions to calculate some point estimators and estimating their variance under unequal probability sampling without replacement. Uni-stage and two-stage sampling designs are considered. The package further contains some approximations for the joint-inclusion probabilities (population and sample based formulae).\cr
 
 Emphasis has been put on the speed of routines as the package mostly uses C compiled code. The full list of available functions are listed below. They are grouped in \emph{purpose-lists}, aiming to clarify their usage.\cr
 
@@ -12,6 +12,8 @@ The user has to pick a suitable combination of: a population parameter of intere
                                                                    \tab\code{\link{Est.Total.Hajek}}                       \cr
                       mean:                                        \tab\code{\link{Est.Mean.NHT}}                          \cr
                                                                    \tab\code{\link{Est.Mean.Hajek}}                        \cr
+                      empirical cumulative distribution function:  \tab\code{\link{Est.EmpDistFunc.NHT}}                   \cr
+                                                                   \tab\code{\link{Est.EmpDistFunc.Hajek}}                 \cr
                       ratio:                                       \tab\code{\link{Est.Ratio}}                             \cr
                       correlation coefficient:                     \tab\code{\link{Est.Corr.NHT}}                          \cr
                                                                    \tab\code{\link{Est.Corr.Hajek}}                        \cr
