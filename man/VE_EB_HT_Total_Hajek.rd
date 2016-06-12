@@ -7,11 +7,11 @@ VE.EB.HT.Total.Hajek(VecY.s, VecPk.s, MatPkl.s, N,
                      VecAlpha.s = rep(1, times=length(VecPk.s)))
 }
 \arguments{
-\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s}. There must not be any missing value.}
-\item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be any missing value.}
-\item{MatPkl.s}{matrix of the second-order inclusion probabilities; its number of rows and columns is equal to \eqn{n}, the sample size. Values in \code{MatPkl.s} must be greater than zero and less than or equal to one. There must not be any missing value.}
+\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s}. There must not be missing values.}
+\item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
+\item{MatPkl.s}{matrix of the second-order inclusion probabilities; its number of rows and columns is equal to \eqn{n}, the sample size. Values in \code{MatPkl.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 \item{N}{the population size. It must be an integer or a double-precision scalar with zero-valued fractional part.}
-\item{VecAlpha.s}{vector of the \eqn{\alpha_k} values; its length is equal to \eqn{n}, the sample size. Values in \code{VecAlpha.s} can be different for each unit and they must be greater or equal to zero. Escobar-Berger (2013) showed that this replicate variance estimator is valid for \eqn{\alpha_k\geq 0}. In particular, they suggest using \eqn{\alpha_k=1} for all units in the sample (the default for \code{VecAlpha.s} if omitted in the function call). Using \eqn{\alpha_k>1} results in approximating the Demnati-Rao (2004) linearisation variance estimators. There must not be any missing value.}
+\item{VecAlpha.s}{vector of the \eqn{\alpha_k} values; its length is equal to \eqn{n}, the sample size. Values in \code{VecAlpha.s} can be different for each unit and they must be greater or equal to zero. Escobar-Berger (2013) showed that this replicate variance estimator is valid for \eqn{\alpha_k\geq 0}. In particular, they suggest using \eqn{\alpha_k=1} for all units in the sample (the default for \code{VecAlpha.s} if omitted in the function call). Using \eqn{\alpha_k>1} results in approximating the Demnati-Rao (2004) linearisation variance estimators. There must not be missing values.}
 }
 \details{
 For the population total of the variable \eqn{y}:

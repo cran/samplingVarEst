@@ -4,7 +4,7 @@
 \description{Computes the Hajek (1964) approximation for the 2nd order (joint) inclusion probabilities utilising only sample-based quantities.  }
 \usage{Pkl.Hajek.s(VecPk.s)}
 \arguments{
-\item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be any missing value.}
+\item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 }
 \details{
 Let \eqn{\pi_k} denote the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}, and let \eqn{\pi_{kl}} denote the joint-inclusion probabilities of the \eqn{k}-th and \eqn{l}-th elements in the sample \eqn{s}. If the joint-inclusion probabilities \eqn{\pi_{kl}} are not available, the Hajek (1964) approximation can be used. Note that this approximation is designed for large-entropy sampling designs, large samples and large populations, i.e. care should be taken with highly-stratified samples, e.g. Berger (2005).

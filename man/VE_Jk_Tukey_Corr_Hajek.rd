@@ -4,9 +4,9 @@
 \description{Computes the Quenouille(1956); Tukey (1958) jackknife variance estimator for the estimator of a correlation coefficient of two variables using the Hajek (1971) point estimator.  }
 \usage{VE.Jk.Tukey.Corr.Hajek(VecY.s, VecX.s, VecPk.s, N, FPC= TRUE)}
 \arguments{
-\item{VecY.s}{vector of the variable of interest Y; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecX.s}. There must not be any missing value.}
-\item{VecX.s}{vector of the variable of interest X; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecY.s}. There must not be any missing value.}
-\item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be any missing value.}
+\item{VecY.s}{vector of the variable of interest Y; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecX.s}. There must not be missing values.}
+\item{VecX.s}{vector of the variable of interest X; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecY.s}. There must not be missing values.}
+\item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 \item{N}{the population size. It must be an integer or a double-precision scalar with zero-valued fractional part. This information is utilised for the finite population correction only, see \code{FPC} below.}
 \item{FPC}{logical value. If an ad hoc finite population correction \eqn{FPC=1-n/N} is to be used. The default is TRUE.}
 }

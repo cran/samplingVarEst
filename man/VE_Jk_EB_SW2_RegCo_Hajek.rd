@@ -5,11 +5,11 @@
 \usage{VE.Jk.EB.SW2.RegCo.Hajek(VecY.s, VecX.s, VecPk.s, nII, VecPi.s,
                          VecCluLab.s, VecCluSize.s)}
 \arguments{
-\item{VecY.s}{vector of the variable of interest Y; its length is equal to \eqn{n}, the total sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecX.s}. There must not be any missing value.}
-\item{VecX.s}{vector of the variable of interest X; its length is equal to \eqn{n}, the total sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecY.s}. There must not be any missing value.}
-\item{VecPk.s}{vector of the elements' first-order inclusion probabilities; its length is equal to \eqn{n}, the total sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be any missing value.}
+\item{VecY.s}{vector of the variable of interest Y; its length is equal to \eqn{n}, the total sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecX.s}. There must not be missing values.}
+\item{VecX.s}{vector of the variable of interest X; its length is equal to \eqn{n}, the total sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecY.s}. There must not be missing values.}
+\item{VecPk.s}{vector of the elements' first-order inclusion probabilities; its length is equal to \eqn{n}, the total sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 \item{nII}{the second stage sample size, i.e. the fixed number of ultimate sampling units that were selected within each cluster. Its size must be less than or equal to the minimum cluster size in the sample.}
-\item{VecPi.s}{vector of the clusters' first-order inclusion probabilities; its length is equal to \eqn{n}, the total sample size. Hence values are expected to be repeated in the utilised sample dataset. Values in \code{VecPi.s} must be greater than zero and less than or equal to one. There must not be any missing value.}
+\item{VecPi.s}{vector of the clusters' first-order inclusion probabilities; its length is equal to \eqn{n}, the total sample size. Hence values are expected to be repeated in the utilised sample dataset. Values in \code{VecPi.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 \item{VecCluLab.s}{vector of the clusters' labels for the elements; its length is equal to \eqn{n}, the total sample size. The labels must be integer numbers.}
 \item{VecCluSize.s}{vector of the clusters' sizes; its length is equal to \eqn{n}, the total sample size. Hence values are expected to be repeated in the utilised sample dataset. None of the sizes must be smaller than \code{nII}.}
 }

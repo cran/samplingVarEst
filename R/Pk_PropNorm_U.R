@@ -2,7 +2,9 @@ Pk.PropNorm.U <- function(n, VecMOS.U)
 {
   if(! is.vector(VecMOS.U)){stop("VecMOS.U must be a vector.")                                                                                     }
   if(any(is.na(VecMOS.U)) ){stop("There are missing values in VecMOS.U.")                                                                          }
-  if(any(VecMOS.U<=0)     ){warning("There are zero or negative values in VecMOS.U.")                                                              }
+  if(any(VecMOS.U==0)     ){warning("There are zero values in VecMOS.U.")                                                                          }
+  if(any(VecMOS.U<0)      ){warning("There are negative values in VecMOS.U. These are treated as zero.")                                           }
+  VecMOS.U[VecMOS.U<0]     <- 0
   if(n%%1 != 0            ){stop("n must be an integer or a double-precision scalar with zero-valued fractional part.")                            }
   N                        <- length(VecMOS.U)
   OUTPUT                   <- .C("Pk_PropNorm_U",

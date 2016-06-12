@@ -4,9 +4,9 @@
 \title{Sampling Variance Estimation package}
 \description{The package contains functions to calculate some point estimators and estimating their variance under unequal probability sampling without replacement. Uni-stage and two-stage sampling designs are considered. The package further contains some approximations for the joint-inclusion probabilities (population and sample based formulae).\cr
 
-Emphasis has been put on the speed of routines as the package mostly uses C compiled code. The full list of available functions are listed below. They are grouped in \emph{purpose-lists}, aiming to clarify their usage.\cr
+Emphasis has been put on the speed of routines as the package mostly uses C compiled code. Below there is a list of available functions. These are grouped in \emph{purpose-lists}, aiming to clarify their usage.\cr
 
-The user has to pick a suitable combination of: a population parameter of interest, a choice of point estimator, and a choice of variance estimator.
+The user should pick a suitable combination of: a population parameter of interest, a choice of point estimator, and a choice of variance estimator.
 \tabular{ll}{         \bold{For these population parameters:}       \tab\bold{The available point estimators are:}\cr
                       total:                                       \tab\code{\link{Est.Total.NHT}}                         \cr
                                                                    \tab\code{\link{Est.Total.Hajek}}                       \cr

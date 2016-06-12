@@ -1,6 +1,14 @@
 
 
 
+version 1.0-2 2016-06-12
+
+ - Negative values of the MOS variable (VecMOS.U) are converted to zero before when
+   computing inclusion probabilities using the function Pk.PropNorm.U.
+ - Some polishing of the user's manual.
+
+
+
 version 1.0-1 2016-01-02
 
  - Two point estimators for the empirical cumulative distribution function were added.
