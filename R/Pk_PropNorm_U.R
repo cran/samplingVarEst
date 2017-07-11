@@ -10,6 +10,7 @@ Pk.PropNorm.U <- function(n, VecMOS.U)
   OUTPUT                   <- .C("Pk_PropNorm_U",
                                       as.integer(n),
                                       as.integer(N),
+                                      VecInd = integer(N),
                                       as.double(VecMOS.U),
                                       VecPk = double(N),
                                       PACKAGE = "samplingVarEst")$VecPk

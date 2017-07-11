@@ -4,7 +4,7 @@ void Est_Ratio_Excluding_All_ElementsByRho
   double  *VecY_s,         //Vector (Size:"n")
   double  *VecX_s,         //Vector (Size:"n")
   double  *VecPk_s,        //Vector (Size:"n")
-	double  *VecRhok_s,      //Vector (Size:"n")
+  double  *VecRhok_s,      //Vector (Size:"n")
   int     *n,              //The sample size
   double  *VecEstRatioYX_k //OUTPUT
 )

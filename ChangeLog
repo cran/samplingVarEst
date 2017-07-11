@@ -1,6 +1,17 @@
 
 
 
+version 1.1 2017-07-10
+
+ - There was a problem with the C code for the Pk.PropNorm.U function (in some cases
+   the sum of the output vector did not match the sample size). It is now fixed.
+ - The CRAN check package submission NOTE:
+      "Found no calls to: 'R_registerRoutines', 'R_useDynamicSymbols'"
+   is now fixed.
+ - Some polishing of the user's manual.
+
+
+
 version 1.0-2 2016-06-12
 
  - Negative values of the MOS variable (VecMOS.U) are converted to zero before when
@@ -38,7 +49,8 @@ version 0.9-8 2013-12-31
 version 0.9-7 2013-12-14
 
  - A point estimator for the intercept regression coefficient is added.
- - Some variance estimators for the intercept regression coefficient point estimator are added.
+ - Some variance estimators for the intercept regression coefficient point estimator are
+   added.
  - Some polishing of the user's manual.
 
 

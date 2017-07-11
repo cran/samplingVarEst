@@ -1,8 +1,8 @@
-210b1c0aef97b846893d678b69b22693 *ChangeLog
-9380343dece875a2b098b32cc305bafd *DESCRIPTION
+3bfa8232fac19f7f03e6416dc8c059d3 *ChangeLog
+dfc4a3f989b9677520b11806f11b32ad *DESCRIPTION
 eb723b61539feef013de476e68b5c50a *GPL-2
 63161a0a16a64cefc52314184570dcb4 *LICENCE.note
-12e3ad052d519416840be96651a8cbce *NAMESPACE
+984e5aac3a5563fc62cf1fa6b25bf54c *NAMESPACE
 7f635b4c8e8a517ad820d68a2e94c314 *R/Est_Corr_Hajek.r
 8ecd2633e5e57897cbbc715812896541 *R/Est_Corr_NHT.r
 101070835c9d1a5e8e4d15a336358b6e *R/Est_EmpDistFunc_Hajek.r
@@ -14,7 +14,7 @@ eb24d1e106e119a0bb1f5576492596fa *R/Est_RegCoI_Hajek.r
 094a822f53b63d3eb09ff0ef6e1750d0 *R/Est_RegCo_Hajek.r
 e5b909657532455e8c83738f32a1d782 *R/Est_Total_Hajek.r
 f2d9d1b822df57b7b9282761635150b4 *R/Est_Total_NHT.r
-ab6312f30a720c2ce007af359dc41049 *R/Pk_PropNorm_U.R
+35e517d05500e247de621aefda69e5b8 *R/Pk_PropNorm_U.R
 a6a876a7aaaf3bac7697b3eff9459d75 *R/Pkl_Hajek_U.R
 18e2d1e3dae404bc8a7729eca30ecb0b *R/Pkl_Hajek_s.R
 e104defc5f26150505c8dfe4c2e27b5b *R/VE_EB_HT_Mean_Hajek.r
@@ -62,7 +62,7 @@ cf10aea29e973071d00c3950a19af844 *R/VE_Jk_Tukey_Total_Hajek.r
 07a6526b7254d6f8e48a863cc5453f8b *R/VE_Lin_SYG_Ratio.r
 260aac0c17a28a7d7b1ec7ce403e4364 *R/VE_SYG_Mean_NHT.r
 b464d8c4e02e59c5a9ef874868202a9e *R/VE_SYG_Total_NHT.r
-00018d624ac5f6cfbf8c6d365e2b63ad *README
+d70b229d4e2971cfde83fef5f736a239 *README
 8adbdd7b53372bb731a875d494721156 *data/oaxaca.rda
 34f3b3c17f534ce36d1a8162a38cc186 *inst/CITATION
 3e126f7a711229826fe08aa6d7fd72f8 *man/Est_Corr_Hajek.rd
@@ -124,7 +124,7 @@ e8ca823bbe342c88c3511f473be01f85 *man/VE_Jk_Tukey_Total_Hajek.rd
 62d6fb6114839f5de2229514e8b4bb32 *man/VE_Lin_SYG_Ratio.rd
 c0ebbd088c8896f4ef8ca408770e3031 *man/VE_SYG_Mean_NHT.rd
 65fb43aaf85b2df141eb6ad910e465a5 *man/VE_SYG_Total_NHT.rd
-7ed81664cc2738df421f174417329c24 *man/oaxaca.rd
+fa61d7551eae0718fd87f7a89b9f9954 *man/oaxaca.rd
 bae3a74f75d4b2246763824f8b5a3c6c *man/samplingVarEst-package.rd
 c334a48dc5bfde92086ff64638379058 *src/Est_Corr_Hajek.c
 f1bdbfc0e6271ac72f05394288d704ec *src/Est_Corr_Hajek_Excluding_All_Elements.c
@@ -135,13 +135,13 @@ bd7b520fafff2639a815d73a367a065d *src/Est_Corr_NHT_Excluding_All_Elements.c
 54c9ec1c07ed0e3695ebd7957470e3fb *src/Est_Mean_Hajek.c
 aa9c8b8e5bcbbb69fe6dea27681a3520 *src/Est_Ratio.c
 46c9adfc5d4670cdb720374b8755807c *src/Est_Ratio_Excluding_All_Elements.c
-8e6b6b1a166881730bcc6a1c948b0101 *src/Est_Ratio_Excluding_All_ElementsByRho.c
+b6dbd797ea6bacfd3b9d903c28977ce2 *src/Est_Ratio_Excluding_All_ElementsByRho.c
 67fc79aca0c3ee649e2d053f67829fb0 *src/Est_RegCoI_Hajek.c
 9e23ce256645e2b41f276fe33d6a55ab *src/Est_RegCoI_Hajek_Excluding_All_Elements.c
 c3ea2c6c3bfad89e58cd2cad504ad0a5 *src/Est_RegCo_Hajek.c
 245f8bd495755608afacfec94b1c556f *src/Est_RegCo_Hajek_Excluding_All_Elements.c
 68efab89709fe1034009102aa35e754f *src/Est_Total_NHT.c
-ceac87ec9817ff20f231c0d6ce5e39ba *src/Pk_PropNorm_U.c
+53536fd6f6dd67b6fb65baa2ba1d0f74 *src/Pk_PropNorm_U.c
 78fb175146b53fbbc4d45c966c9573a0 *src/Pkl_Hajek_U.c
 5f341fc62d6250a87bc5cfed044eedf5 *src/Pkl_Hajek_s.c
 7a4614118058f90723ac3622b87efb1c *src/VE_HT_Total_NHT.c
@@ -154,3 +154,4 @@ e77d7f2205430c6ef0b7548bc005f874 *src/VE_Hajek_form.c
 535657d1ea110cee936ac8e0c60cc1cb *src/VE_Jk_EB_SW2_RegCo_Hajek_Clu.c
 8928df2a2bdd45013160a6702f2362fa *src/VE_SYG_Total_NHT.c
 620499a111f65485e6f41b0ef6423889 *src/VE_SYG_form.c
+91255af1d4fa4201e4411173a342aee1 *src/samplingVarEst_init.c

@@ -2,11 +2,11 @@
 \alias{oaxaca}
 \docType{data}
 \title{Municipalities of the state of Oaxaca in Mexico}
-\description{Dataset with information about the free and sovereign state of Oaxaca which is 
+\description{Dataset with information about the free and sovereign state of Oaxaca which is
 located in the south part of Mexico. The dataset contains information of population, surface, 
 indigenous language, agriculture and income from years ranging from 2000 to 2010. The information
 was originally collected and processed by the Mexico's National Institute of Statistics and Geography (INEGI by its name in
-Spanish, `Instituto Nacional de Estadistica y Geografia', \href{http://www.inegi.org.mx/}{http://www.inegi.org.mx/}).}
+Spanish, `Instituto Nacional de Estadistica y Geografia', http://www.inegi.org.mx/).}
 \usage{data(oaxaca)}
 \format{
 A data frame with 570 observations on the following 41 variables:
@@ -54,7 +54,7 @@ A data frame with 570 observations on the following 41 variables:
   \item{sSW_10_3}{a sample (column vector of ones and zeros; 1 = selected, 0 = otherwise) of 30 municipalities drawn using a self-weighted two-stage sampling design. The first stage draws 10 districts using the Hajek (1964) maximum-entropy sampling design with clusters' inclusion probabilities proportional to the size of the clusters (variable SIZEDIST). The second stage draws 3 municipalities within the selected districts at the first stage, using equal-probability without-replacement sampling.}
   }
 }
-\source{Mexico's National Institute of Statistics and Geography (INEGI), `Instituto Nacional de Estadistica y Geografia' \href{http://www3.inegi.org.mx/sistemas/descarga/}{http://www3.inegi.org.mx/sistemas/descarga/}
+\source{Mexico's National Institute of Statistics and Geography (INEGI), `Instituto Nacional de Estadistica y Geografia' http://www.inegi.org.mx/
 }
 \examples{
 data(oaxaca)                         #Loads the Oaxaca municipalities dataset

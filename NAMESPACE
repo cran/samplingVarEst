@@ -1,5 +1,95 @@
-useDynLib(samplingVarEst) 
+useDynLib(samplingVarEst, .registration=TRUE)
 
-# Export all names
-exportPattern(".")
+### These functions are exported
+export(
+    "Est.Corr.Hajek",
+    "Est.Corr.NHT",
+    "Est.EmpDistFunc.Hajek",
+    "Est.EmpDistFunc.NHT",
+    "Est.Mean.Hajek",
+    "Est.Mean.NHT",
+    "Est.Ratio",
+    "Est.RegCo.Hajek",
+    "Est.RegCoI.Hajek",
+    "Est.Total.Hajek",
+    "Est.Total.NHT",
+    "Pk.PropNorm.U",
+    "Pkl.Hajek.s",
+    "Pkl.Hajek.U",
+    "VE.EB.HT.Mean.Hajek",
+    "VE.EB.HT.Ratio",
+    "VE.EB.HT.Total.Hajek",
+    "VE.EB.SYG.Mean.Hajek",
+    "VE.EB.SYG.Ratio",
+    "VE.EB.SYG.Total.Hajek",
+    "VE.Hajek.Mean.NHT",
+    "VE.Hajek.Total.NHT",
+    "VE.HT.Mean.NHT",
+    "VE.HT.Total.NHT",
+    "VE.Jk.B.Corr.Hajek",
+    "VE.Jk.B.Mean.Hajek",
+    "VE.Jk.B.Ratio",
+    "VE.Jk.B.RegCo.Hajek",
+    "VE.Jk.B.RegCoI.Hajek",
+    "VE.Jk.B.Total.Hajek",
+    "VE.Jk.CBS.HT.Corr.Hajek",
+    "VE.Jk.CBS.HT.Mean.Hajek",
+    "VE.Jk.CBS.HT.Ratio",
+    "VE.Jk.CBS.HT.RegCo.Hajek",
+    "VE.Jk.CBS.HT.RegCoI.Hajek",
+    "VE.Jk.CBS.HT.Total.Hajek",
+    "VE.Jk.CBS.SYG.Corr.Hajek",
+    "VE.Jk.CBS.SYG.Mean.Hajek",
+    "VE.Jk.CBS.SYG.Ratio",
+    "VE.Jk.CBS.SYG.RegCo.Hajek",
+    "VE.Jk.CBS.SYG.RegCoI.Hajek",
+    "VE.Jk.CBS.SYG.Total.Hajek",
+    "VE.Jk.EB.SW2.Corr.Hajek",
+    "VE.Jk.EB.SW2.Mean.Hajek",
+    "VE.Jk.EB.SW2.Ratio",
+    "VE.Jk.EB.SW2.RegCo.Hajek",
+    "VE.Jk.EB.SW2.RegCoI.Hajek",
+    "VE.Jk.EB.SW2.Total.Hajek",
+    "VE.Jk.Tukey.Corr.Hajek",
+    "VE.Jk.Tukey.Corr.NHT",
+    "VE.Jk.Tukey.Mean.Hajek",
+    "VE.Jk.Tukey.Ratio",
+    "VE.Jk.Tukey.RegCo.Hajek",
+    "VE.Jk.Tukey.RegCoI.Hajek",
+    "VE.Jk.Tukey.Total.Hajek",
+    "VE.Lin.HT.Ratio",
+    "VE.Lin.SYG.Ratio",
+    "VE.SYG.Mean.NHT",
+    "VE.SYG.Total.NHT"
+      )
+
+### These functions are not exported
+#   Est_Corr_Hajek
+#   Est_Corr_Hajek_Excluding_All_Elements
+#   Est_Corr_NHT
+#   Est_Corr_NHT_Excluding_All_Elements
+#   Est_EmpDistFunc_Hajek
+#   Est_EmpDistFunc_NHT
+#   Est_Mean_Hajek
+#   Est_Ratio
+#   Est_Ratio_Excluding_All_Elements
+#   Est_Ratio_Excluding_All_ElementsByRho
+#   Est_RegCo_Hajek
+#   Est_RegCo_Hajek_Excluding_All_Elements
+#   Est_RegCoI_Hajek
+#   Est_RegCoI_Hajek_Excluding_All_Elements
+#   Est_Total_NHT
+#   Pk_PropNorm_U
+#   Pkl_Hajek_s
+#   Pkl_Hajek_U
+#   VE_Hajek_form
+#   VE_Hajek_Total_NHT
+#   VE_HT_form
+#   VE_HT_Total_NHT
+#   VE_Jk_EB_SW2_Corr_Hajek_Clu
+#   VE_Jk_EB_SW2_Ratio_Clu
+#   VE_Jk_EB_SW2_RegCo_Hajek_Clu
+#   VE_Jk_EB_SW2_RegCoI_Hajek_Clu
+#   VE_SYG_form
+#   VE_SYG_Total_NHT
 
