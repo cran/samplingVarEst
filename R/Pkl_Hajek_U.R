@@ -1,7 +1,7 @@
 Pkl.Hajek.U <- function(VecPk.U)
 {
   if(! is.vector(VecPk.U)     ){stop("VecPk.U must be a vector.")                                                                               }
-  if(any(is.na(VecPk.U))      ){stop("There are missing values in VecPk.U.")                                                                    }
+  if(anyNA(VecPk.U)           ){stop("There are missing values in VecPk.U.")                                                                    }
   if(any(VecPk.U<=0|VecPk.U>1)){stop("There are invalid values in VecPk.U.")                                                                    }
   N                            <- length(VecPk.U)
   if(all(VecPk.U==1)          ){OUTPUT <- rep(1, times= N)                                                                                      }

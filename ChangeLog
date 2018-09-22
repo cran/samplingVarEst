@@ -1,21 +1,24 @@
 
 
 
+version 1.2 2018-09-21
+
+ - A simple performance optimization is made in all routines, replacing 'any(is.na(x))' by 'anyNA(x)' for speed. Note that this needs R >= 3.1.0. See: https://stackoverflow.com/questions/6551825/fastest-way-to-detect-if-vector-has-at-least-1-na
+ - Some surely useless 'as.double()' or 'as.integer()' were removed in all routines.
+
+
+
 version 1.1 2017-07-10
 
- - There was a problem with the C code for the Pk.PropNorm.U function (in some cases
-   the sum of the output vector did not match the sample size). It is now fixed.
- - The CRAN check package submission NOTE:
-      "Found no calls to: 'R_registerRoutines', 'R_useDynamicSymbols'"
-   is now fixed.
+ - There was a problem with the C code for the Pk.PropNorm.U function (in some cases the sum of the output vector did not match the sample size). It is now fixed.
+ - The CRAN check package submission NOTE: "Found no calls to: 'R_registerRoutines', 'R_useDynamicSymbols'" is now fixed.
  - Some polishing of the user's manual.
 
 
 
 version 1.0-2 2016-06-12
 
- - Negative values of the MOS variable (VecMOS.U) are converted to zero before when
-   computing inclusion probabilities using the function Pk.PropNorm.U.
+ - Negative values of the MOS variable (VecMOS.U) are converted to zero before when computing inclusion probabilities using the function Pk.PropNorm.U.
  - Some polishing of the user's manual.
 
 
@@ -36,12 +39,8 @@ version 0.9-9 2014-05-13
 version 0.9-8 2013-12-31
 
  - Some linearisation variance estimators for the ratio point estimator are added.
- - Restrictions on the input of n and N (sample and population sizes) are relaxed. It is
-   no longer needed that they are (formally) integers. They now can be double-precision
-   scalars with zero-valued fractional parts.
- - When using the Tukey's Jackknife it is now optional to utilise a finite population co-
-   rrection (PFC). A logical argument that indicates whether to use it or not was added
-   to those functions that implement Tukey's jackknife variance estimators.
+ - Restrictions on the input of n and N (sample and population sizes) are relaxed. It is no longer needed that they are (formally) integers. They now can be double-precision scalars with zero-valued fractional parts.
+ - When using the Tukey's Jackknife it is now optional to utilise a finite population correction (PFC). A logical argument that indicates whether to use it or not was added to those functions that implement Tukey's jackknife variance estimators.
  - Some polishing of the user's manual.
 
 
@@ -49,8 +48,7 @@ version 0.9-8 2013-12-31
 version 0.9-7 2013-12-14
 
  - A point estimator for the intercept regression coefficient is added.
- - Some variance estimators for the intercept regression coefficient point estimator are
-   added.
+ - Some variance estimators for the intercept regression coefficient point estimator are added.
  - Some polishing of the user's manual.
 
 

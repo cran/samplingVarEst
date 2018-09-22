@@ -10,16 +10,16 @@ VE.SYG.Total.NHT <- function(VecY.s, VecPk.s, MatPkl.s)
   n                                   <- length(VecY.s)
   if(n != length(VecPk.s)            ){stop("The lengths of VecY.s and VecPk.s are different.")                             }
   if(n != DimMatR                    ){stop("The lengths of VecY.s, VecPk.s and dimensions of MatPkl.s are different.")     }
-  if(any(is.na(VecPk.s))             ){stop("There are missing values in VecPk.s.")                                         }
+  if(anyNA(VecPk.s)                  ){stop("There are missing values in VecPk.s.")                                         }
   if(any(VecPk.s<=0|VecPk.s>1)       ){stop("There are invalid values in VecPk.s.")                                         }
-  if(any(is.na(MatPkl.s))            ){stop("There are missing values in MatPkl.s.")                                        }
+  if(anyNA(MatPkl.s)                 ){stop("There are missing values in MatPkl.s.")                                        }
   if(any(MatPkl.s<=0|MatPkl.s>1)     ){stop("There are invalid values in MatPkl.s.")                                        }
-  if(any(is.na(VecY.s))              ){stop("There are missing values in VecY.s.")                                          }
+  if(anyNA(VecY.s)                   ){stop("There are missing values in VecY.s.")                                          }
   OUTPUT                              <- .C("VE_SYG_Total_NHT",
                                              as.double(VecY.s),
                                              as.double(VecPk.s),
                                              as.double(c(MatPkl.s)),
-                                             as.integer(n),
+                                             n,
                                              VarEst = double(1),
                                              PACKAGE = "samplingVarEst")$VarEst
   if(OUTPUT<0                        ){warning("The variance estimate contains negative values.")                           }

@@ -3,10 +3,10 @@ VE.Jk.Tukey.RegCo.Hajek <- function(VecY.s, VecX.s, VecPk.s, N, FPC= TRUE)
   if(! is.vector(VecY.s)              ){stop("VecY.s must be a vector.")                                                                   }
   if(! is.vector(VecX.s)              ){stop("VecX.s must be a vector.")                                                                   }
   if(! is.vector(VecPk.s)             ){stop("VecPk.s must be a vector.")                                                                  }
-  if(any(is.na(VecPk.s))              ){stop("There are missing values in VecPk.s.")                                                       }
+  if(anyNA(VecPk.s)                   ){stop("There are missing values in VecPk.s.")                                                       }
   if(any(VecPk.s<=0|VecPk.s>1)        ){stop("There are invalid values in VecPk.s.")                                                       }
-  if(any(is.na(VecY.s))               ){stop("There are missing values in VecY.s.")                                                        }
-  if(any(is.na(VecX.s))               ){stop("There are missing values in VecX.s.")                                                        }
+  if(anyNA(VecY.s)                    ){stop("There are missing values in VecY.s.")                                                        }
+  if(anyNA(VecX.s)                    ){stop("There are missing values in VecX.s.")                                                        }
   if((length(N) != 1) & FPC           ){stop("Value of N must be a scalar, i.e. a vector of length 1.")                                    }
   if((N%%1      != 0) & FPC           ){stop("N must be an integer or a double-precision scalar with zero-valued fractional part.")        }
   n                                    <- length(VecY.s)
@@ -19,7 +19,7 @@ VE.Jk.Tukey.RegCo.Hajek <- function(VecY.s, VecX.s, VecPk.s, N, FPC= TRUE)
                                               as.double(VecY.s),
                                               as.double(VecX.s),
                                               as.double(VecPk.s),
-                                              as.integer(n),
+                                              n,
                                               VectVarEst = double(n),
                                               PACKAGE = "samplingVarEst")$VectVarEst
   EstTheta                             <- Est.RegCo.Hajek(VecY.s, VecX.s, VecPk.s)
