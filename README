@@ -15,7 +15,7 @@ available at http://www.r-project.org/Licenses/
 -------------------
 
 This package contains the samplingVarEst (Sampling Variance Estimation)
-package version 1.2 for R.
+package version 1.3 for R.
 
 Authors: Emilio Lopez Escobar       [aut, cre, cph] <emilio@numerika.mx>
          Ernesto Barrios Zamudio    [ctb]           <ebarrios@itam.mx>

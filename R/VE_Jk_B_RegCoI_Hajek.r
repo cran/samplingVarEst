@@ -7,7 +7,7 @@ VE.Jk.B.RegCoI.Hajek <- function(VecY.s, VecX.s, VecPk.s)
   if(n != length(VecPk.s)            ){stop("The lengths of VecY.s and VecPk.s are different.")               }
   if(n != length(VecX.s)             ){stop("The lengths of VecY.s and VecX.s are different.")                }
   if(anyNA(VecPk.s)                  ){stop("There are missing values in VecPk.s.")                           }
-  if(any(VecPk.s<=0|VecPk.s>1)       ){stop("There are invalid values in VecPk.s.")                           }
+  if(min(VecPk.s)<=0|max(VecPk.s)>1  ){stop("There are invalid values in VecPk.s.")                           }
   if(anyNA(VecY.s)                   ){stop("There are missing values in VecY.s.")                            }
   if(anyNA(VecX.s)                   ){stop("There are missing values in VecX.s.")                            }
   VecEstTheta_k                       <- .C("Est_RegCoI_Hajek_Excluding_All_Elements",
@@ -19,7 +19,7 @@ VE.Jk.B.RegCoI.Hajek <- function(VecY.s, VecX.s, VecPk.s)
                                              PACKAGE = "samplingVarEst")$VectVarEst
   EstTheta                            <- Est.RegCoI.Hajek(VecY.s, VecX.s, VecPk.s)
   Nhat                                <- .C("Est_Total_NHT", 
-                                             as.double(rep(1.0, times=n)), 
+                                             as.double(rep(1.0, times=n)),
                                              as.double(VecPk.s), 
                                              n,
                                              PointEst = double(1), 
@@ -27,7 +27,7 @@ VE.Jk.B.RegCoI.Hajek <- function(VecY.s, VecX.s, VecPk.s)
   VecPseudo.s                         <- (1 - {1/Nhat/VecPk.s}) * (EstTheta - VecEstTheta_k)
   Doublen                             <- as.double(n)
   OUTPUT                              <- .C("VE_Hajek_form", 
-                                             as.double(VecPseudo.s),
+                                             VecPseudo.s,
                                              as.double(VecPk.s), 
                                              n, 
                                              Doublen,

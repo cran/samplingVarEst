@@ -4,7 +4,7 @@ VE.Jk.Tukey.Corr.NHT <- function(VecY.s, VecX.s, VecPk.s, N, FPC= TRUE)
   if(! is.vector(VecX.s)              ){stop("VecX.s must be a vector.")                                                                   }
   if(! is.vector(VecPk.s)             ){stop("VecPk.s must be a vector.")                                                                  }
   if(anyNA(VecPk.s)                   ){stop("There are missing values in VecPk.s.")                                                       }
-  if(any(VecPk.s<=0|VecPk.s>1)        ){stop("There are invalid values in VecPk.s.")                                                       }
+  if(min(VecPk.s)<=0|max(VecPk.s)>1   ){stop("There are invalid values in VecPk.s.")                                                       }
   if(anyNA(VecY.s)                    ){stop("There are missing values in VecY.s.")                                                        }
   if(anyNA(VecX.s)                    ){stop("There are missing values in VecX.s.")                                                        }
   if((length(N) != 1) & FPC           ){stop("Value of N must be a scalar, i.e. a vector of length 1.")                                    }
@@ -24,7 +24,7 @@ VE.Jk.Tukey.Corr.NHT <- function(VecY.s, VecX.s, VecPk.s, N, FPC= TRUE)
                                               VectVarEst = double(n),
                                               PACKAGE = "samplingVarEst")$VectVarEst
   EstTheta                             <- Est.Corr.NHT(VecY.s, VecX.s, VecPk.s, N)
-  OUTPUT                               <- (Doublen-1)/Doublen * sum( (EstTheta - VecEstTheta_k)^2 )
+  OUTPUT                               <- (Doublen-1)/Doublen * sum( (EstTheta - VecEstTheta_k) * (EstTheta - VecEstTheta_k) )
   if(FPC                              ){OUTPUT <- (1-Doublen/DoubleN) * OUTPUT                                                             }
   if(OUTPUT<0                         ){warning("The variance estimate contains negative values.")                                         }
   OUTPUT

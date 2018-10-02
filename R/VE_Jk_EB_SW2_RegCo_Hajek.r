@@ -10,9 +10,9 @@ VE.Jk.EB.SW2.RegCo.Hajek <- function(VecY.s, VecX.s, VecPk.s, nII, VecPi.s, VecC
   if(! is.vector(VecCluLab.s)               ){stop("VecCluLab.s must be a vector.")                                                                                          }
   if(! is.integer(VecCluLab.s)              ){stop("VecCluLab.s must be a vector of integers.")                                                                              }
   if(anyNA(VecPk.s)                         ){stop("There are missing values in VecPk.s.")                                                                                   }
-  if(any(VecPk.s<=0|VecPk.s>1)              ){stop("There are invalid values in VecPk.s.")                                                                                   }
+  if(min(VecPk.s)<=0|max(VecPk.s)>1         ){stop("There are invalid values in VecPk.s.")                                                                                   }
   if(anyNA(VecPi.s)                         ){stop("There are missing values in VecPi.s.")                                                                                   }
-  if(any(VecPi.s<=0|VecPi.s>1)              ){stop("There are invalid values in VecPi.s.")                                                                                   }
+  if(min(VecPi.s)<=0|max(VecPi.s)>1         ){stop("There are invalid values in VecPi.s.")                                                                                   }
   if(anyNA(VecY.s)                          ){stop("There are missing values in VecY.s.")                                                                                    }
   if(anyNA(VecX.s)                          ){stop("There are missing values in VecX.s.")                                                                                    }
   if(length(nII) != 1                       ){stop(paste("nII must be a integer scalar, i.e. a vector of length 1 valued from 1 to", as.character(.Machine$integer.max),"."))}
@@ -25,18 +25,18 @@ VE.Jk.EB.SW2.RegCo.Hajek <- function(VecY.s, VecX.s, VecPk.s, nII, VecPi.s, VecC
   if(n != length(VecX.s)                    ){stop("The lengths of VecY.s and VecX.s are different.")                                                                        }
   if(n != length(VecCluLab.s)               ){stop("The lengths of VecY.s and VecCluLab.s are different.")                                                                   }
   if(n != as.integer(nI*nII)                ){stop("The lengths of VecY.s and (nI * nII) are different.")                                                                    }
-  if(any(VecCluSize.s < nII)                ){stop("The value of nII is larger than the minimum cluster size in VecCluSize.s.")                                              }
+  if(min(VecCluSize.s) < nII                ){stop("The value of nII is larger than the minimum cluster size in VecCluSize.s.")                                              }
   EstTheta                                   <- Est.RegCo.Hajek(VecY.s, VecX.s, VecPk.s)
   VarianceClusters                           <- .C("VE_Jk_EB_SW2_RegCo_Hajek_Clu",
-                                                    as.double(EstTheta),
+                                                    EstTheta,
                                                     as.double(VecY.s),
                                                     as.double(VecX.s),
                                                     as.double(VecPk.s),
                                                     n,
                                                     nI,
                                                     DoublenI,
-                                                    as.integer(VecCluLab.s),
-                                                    as.integer(VecCluLab.s[!duplicated(VecCluLab.s)]),
+                                                    VecCluLab.s,
+                                                    VecCluLab.s[!duplicated(VecCluLab.s)],
                                                     as.double(1 - VecPi.sI),
                                                     as.double(1 - VecPi.sI * nII/(nII-1)*(VecCluSize.sI-1)/VecCluSize.sI ),
                                                     Est_d = double(1),
