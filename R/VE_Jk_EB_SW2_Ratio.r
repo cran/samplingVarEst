@@ -24,7 +24,7 @@ VE.Jk.EB.SW2.Ratio <- function(VecY.s, VecX.s, VecPk.s, nII, VecPi.s, VecCluLab.
   DoublenI                                   <- as.double(nI)
   if(n != length(VecPk.s)                   ){stop("The lengths of VecY.s and VecPk.s are different.")                                                                       }
   if(n != length(VecX.s)                    ){stop("The lengths of VecY.s and VecX.s are different.")                                                                        }
-  if(any(VecX.s==0)                         ){warning("There are zero values in the denominator variable VecX.s.")                                      }
+  if(any(VecX.s==0)                         ){warning("There are zero values in the denominator variable VecX.s.")                                                           }
   if(n != length(VecCluLab.s)               ){stop("The lengths of VecY.s and VecCluLab.s are different.")                                                                   }
   if(n != as.integer(nI*nII)                ){stop("The lengths of VecY.s and (nI * nII) are different.")                                                                    }
   if(min(VecCluSize.s) < nII                ){stop("The value of nII is larger than the minimum cluster size in VecCluSize.s.")                                              }
