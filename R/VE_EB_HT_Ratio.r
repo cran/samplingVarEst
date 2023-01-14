@@ -1,4 +1,4 @@
-VE.EB.HT.Ratio <- function(VecY.s, VecX.s, VecPk.s, MatPkl.s, VecAlpha.s = rep(1, times= length(VecPk.s)))
+VE.EB.HT.Ratio <- function(VecY.s, VecX.s, VecPk.s, MatPkl.s, VecAlpha.s = rep.int(1, length(VecPk.s)))
 {
   if(! is.vector(VecY.s)                ){stop("VecY.s must be a vector.")                                                        }
   if(! is.vector(VecX.s)                ){stop("VecX.s must be a vector.")                                                        }

@@ -1,4 +1,4 @@
-VE.EB.SYG.Total.Hajek <- function(VecY.s, VecPk.s, MatPkl.s, N, VecAlpha.s = rep(1, times= length(VecPk.s)))
+VE.EB.SYG.Total.Hajek <- function(VecY.s, VecPk.s, MatPkl.s, N, VecAlpha.s = rep.int(1, length(VecPk.s)))
 {
   if(length(N) != 1 ){stop("Value of N must be a scalar, i.e. a vector of length 1.")                                    }
   if(N%%1 != 0      ){stop("N must be an integer or a double-precision scalar with zero-valued fractional part.")        }

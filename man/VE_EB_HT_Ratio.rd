@@ -4,14 +4,14 @@
 \description{Computes the Escobar-Berger (2013) unequal probability replicate variance estimator for the estimator of a ratio of two totals/means. It uses the Horvitz-Thompson (1952) variance form.  }
 \usage{
 VE.EB.HT.Ratio(VecY.s, VecX.s, VecPk.s, MatPkl.s,
-               VecAlpha.s = rep(1, times=length(VecPk.s)))
+               VecAlpha.s = rep.int(1, length(VecPk.s)))
 }
 \arguments{
-\item{VecY.s}{vector of the numerator variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecX.s}. There must not be missing values.}
-\item{VecX.s}{vector of the denominator variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecY.s}. There must not be missing values. All values of \code{VecX.s} should be greater than zero. A warning is displayed if this does not hold and computations continue if mathematical expressions allow this kind of values for the denominator variable.}
+\item{VecY.s}{vector of the numerator variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as that of \code{VecPk.s} and \code{VecX.s}. There must not be missing values.}
+\item{VecX.s}{vector of the denominator variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as that of \code{VecPk.s} and \code{VecY.s}. There must not be missing values. All values of \code{VecX.s} should be greater than zero. A warning is displayed if this does not hold, and computations continue if mathematical expressions allow this kind of values for the denominator variable.}
 \item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
-\item{MatPkl.s}{matrix of the second-order inclusion probabilities; its number of rows and columns is equal to \eqn{n}, the sample size. Values in \code{MatPkl.s} must be greater than zero and less than or equal to one. There must not be missing values.}
-\item{VecAlpha.s}{vector of the \eqn{\alpha_k} values; its length is equal to \eqn{n}, the sample size. Values in \code{VecAlpha.s} can be different for each unit and they must be greater or equal to zero. Escobar-Berger (2013) showed that this replicate variance estimator is valid for \eqn{\alpha_k\geq 0}. In particular, they suggest using \eqn{\alpha_k=1} for all units in the sample (the default for \code{VecAlpha.s} if omitted in the function call). Using \eqn{\alpha_k>1} results in approximating the Demnati-Rao (2004) linearisation variance estimators. There must not be missing values.}
+\item{MatPkl.s}{matrix of the second-order inclusion probabilities; its number of rows and columns equals \eqn{n}, the sample size. Values in \code{MatPkl.s} must be greater than zero and less than or equal to one. There must not be missing values.}
+\item{VecAlpha.s}{vector of the \eqn{\alpha_k} values; its length is equal to \eqn{n}, the sample size. Values in \code{VecAlpha.s} can be different for each unit, and must be greater or equal to zero. Escobar-Berger (2013) showed that this replicate variance estimator is valid for \eqn{\alpha_k\geq 0}. In particular, they suggest using \eqn{\alpha_k=1} for all units in the sample (the default for \code{VecAlpha.s} if omitted in the function call). Using \eqn{\alpha_k>1} approximates the Demnati-Rao (2004) linearisation variance estimators. There must not be missing values.}
 }
 \details{
 For the population ratio of two totals/means of the variables \eqn{y} and \eqn{x}:
@@ -25,7 +25,7 @@ where
 for some \eqn{\alpha_k\geq0} (suggested to be 1, see below comments) and with
 \deqn{\hat{R}_k^{*} = \frac{\left(\sum_{l\in s} w_l y_l - w_k^{1-\alpha_k} y_k\right)/\left(\sum_{l\in s} w_l - w_k^{1-\alpha_k} \right)}{\left(\sum_{l\in s} w_l x_l - w_k^{1-\alpha_k} x_k\right)/\left(\sum_{l\in s} w_l - w_k^{1-\alpha_k} \right)} = \frac{\sum_{l\in s} w_l y_l - w_k^{1-\alpha_k} y_k}{\sum_{l\in s} w_l x_l - w_k^{1-\alpha_k} x_k}}
 Regarding the value of \eqn{\alpha_k}, Escobar-Berger (2013) show that \eqn{\hat{V}(\hat{R})} is valid for
-\eqn{\alpha_k\geq0} but conclude that \eqn{\alpha_k>0} should be used as \eqn{\alpha_k=0} corresponds to a naive biased and unstable jackknife. They recommend \eqn{\alpha_k=1} or \eqn{\alpha_k>1}.  If \eqn{\alpha_k=1}, \eqn{\hat{V}(\hat{R})} reduces to the Escobar-Berger (2011) jackknife. Using \eqn{\alpha_k>1} results in approximating the empirical influence function, i.e. the Gateaux (1919) derivative, or Demnati-Rao (2004) linearisation variance estimators. The larger the \eqn{\alpha_k}, the closer the approximation. Further, Escobar-Berger (2013) give an intuitive explanation of the replication method from a jackknife and bootstrap perspective.
+\eqn{\alpha_k\geq0} but conclude that \eqn{\alpha_k>0} should be used as \eqn{\alpha_k=0} corresponds to a naive biased and unstable jackknife. They recommend \eqn{\alpha_k=1} or \eqn{\alpha_k>1}.  If \eqn{\alpha_k=1}, \eqn{\hat{V}(\hat{R})} reduces to the Escobar-Berger (2011) jackknife. Using \eqn{\alpha_k>1} approximates the empirical influence function, i.e. the Gateaux (1919) derivative, or Demnati-Rao (2004) linearisation variance estimators. The larger the \eqn{\alpha_k}, the closer the approximation. Further, Escobar-Berger (2013) give an intuitive explanation of the replication method from a jackknife and bootstrap perspective.
   }
 \value{
 The function returns a value for the estimated variance.

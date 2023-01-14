@@ -4,7 +4,7 @@
 \description{Computes the Berger (2007) unequal probability jackknife variance estimator for the Hajek (1971) estimator of a mean.  }
 \usage{VE.Jk.B.Mean.Hajek(VecY.s, VecPk.s)}
 \arguments{
-\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s}. There must not be missing values.}
+\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as that of \code{VecPk.s}. There must not be missing values.}
 \item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 }
 \details{
@@ -22,7 +22,7 @@ with
 \deqn{\tilde{w}_k = \frac{w_k}{\sum_{l\in s} w_l}}
 and
 \deqn{\hat{\bar{y}}_{Hajek(k)} = \frac{\sum_{l\in s, l\neq k} w_l y_l}{\sum_{l\in s, l\neq k} w_l}}
-Note that this variance estimator utilises implicitly the Hajek (1964) approximations that are designed for large-entropy sampling designs, large samples and large populations, i.e. care should be taken with highly-stratified samples, e.g. Berger (2005).
+Note that this variance estimator implicitly utilises the Hajek (1964) approximations that are designed for large-entropy sampling designs, large samples, and large populations, i.e., care should be taken with highly-stratified samples, e.g. Berger (2005).
   }
 \value{
 The function returns a value for the estimated variance.

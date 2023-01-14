@@ -4,9 +4,9 @@
 \description{Computes the Sen (1953); Yates-Grundy(1953) variance estimator for the Narain (1951); Horvitz-Thompson (1952) point estimator for a population total.  }
 \usage{VE.SYG.Total.NHT(VecY.s, VecPk.s, MatPkl.s)}
 \arguments{
-\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s}. There must not be missing values.}
+\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as that of \code{VecPk.s}. There must not be missing values.}
 \item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
-\item{MatPkl.s}{matrix of the second-order inclusion probabilities; its number of rows and columns is equal to \eqn{n}, the sample size. Values in \code{MatPkl.s} must be greater than zero and less than or equal to one. There must not be missing values.}
+\item{MatPkl.s}{matrix of the second-order inclusion probabilities; its number of rows and columns equals \eqn{n}, the sample size. Values in \code{MatPkl.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 }
 \details{
 For the population total of the variable \eqn{y}:
@@ -15,7 +15,7 @@ the unbiased Narain (1951); Horvitz-Thompson (1952) estimator of \eqn{t} is give
 \deqn{\hat{t}_{NHT} = \sum_{k\in s} \frac{y_k}{\pi_k}}
 where \eqn{\pi_k} denotes the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}. Let \eqn{\pi_{kl}} denotes the joint-inclusion probabilities of the \eqn{k}-th and \eqn{l}-th elements in the sample \eqn{s}. The variance of \eqn{\hat{t}_{NHT}} is given by: 
 \deqn{V(\hat{t}_{NHT}) = \sum_{k\in U}\sum_{l\in U} (\pi_{kl}-\pi_k\pi_l)\frac{y_k}{\pi_k}\frac{y_l}{\pi_l}}
-which, if the utilised sampling design is of fixed-size, can therefore be estimated by the Sen-Yates-Grundy variance estimator (implemented by the current function):
+which, if the utilised sampling design is of fixed sample size, can therefore be estimated by the Sen-Yates-Grundy variance estimator (implemented by the current function):
 \deqn{\hat{V}(\hat{t}_{NHT}) = \frac{-1}{2}\sum_{k\in s}\sum_{l\in s} \frac{\pi_{kl}-\pi_k\pi_l}{\pi_{kl}}\left(\frac{y_k}{\pi_k}-\frac{y_l}{\pi_l}\right)^2}
   }
 \value{

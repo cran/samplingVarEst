@@ -27,7 +27,7 @@ VE.Jk.CBS.HT.RegCoI.Hajek <- function(VecY.s, VecX.s, VecPk.s, MatPkl.s)
                                              PACKAGE = "samplingVarEst")$VectVarEst
   EstTheta                            <- Est.RegCoI.Hajek(VecY.s, VecX.s, VecPk.s)
   Nhat                                <- .C("Est_Total_NHT",
-                                             as.double(rep(1.0, times=n)),
+                                             as.double(rep.int(1.0, n)),
                                              as.double(VecPk.s),
                                              n,
                                              PointEst = double(1),

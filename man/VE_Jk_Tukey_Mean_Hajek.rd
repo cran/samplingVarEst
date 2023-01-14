@@ -4,9 +4,9 @@
 \description{Computes the Quenouille(1956); Tukey (1958) jackknife variance estimator for the Hajek (1971) estimator of a mean.  }
 \usage{VE.Jk.Tukey.Mean.Hajek(VecY.s, VecPk.s, N, FPC= TRUE)}
 \arguments{
-\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s}. There must not be missing values.}
+\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as that of \code{VecPk.s}. There must not be missing values.}
 \item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
-\item{N}{the population size. It must be an integer or a double-precision scalar with zero-valued fractional part. This information is also utilised for the finite population correction, see \code{FPC} below.}
+\item{N}{the population size. It must be an integer or a double-precision scalar with zero-valued fractional part. This information is also utilised for the finite population correction; see \code{FPC} below.}
 \item{FPC}{logical value. If an ad hoc finite population correction \eqn{FPC=1-n/N} is to be used. The default is TRUE.}
 }
 \details{
@@ -18,7 +18,7 @@ where \eqn{w_k=1/\pi_k} and \eqn{\pi_k} denotes the inclusion probability of the
 \deqn{\hat{V}(\hat{\bar{y}}_{Hajek}) = \left(1-\frac{n}{N}\right)\frac{n-1}{n}\sum_{k\in s} \left( \hat{\bar{y}}_{Hajek(k)}-\hat{\bar{y}}_{Hajek} \right)^2}
 where
 \deqn{\hat{\bar{y}}_{Hajek(k)} = \frac{\sum_{l\in s, l\neq k} w_l y_l}{\sum_{l\in s, l\neq k} w_l}}
-Note that we are implementing the Tukey (1958) jackknife variance estimator using the `ad hoc' finite population correction \eqn{1-n/N} (see Shao and Tu, 1995; Wolter, 2007). If \code{FPC=FALSE} then the term \eqn{1-n/N} is ommited from the above formula.
+We are implementing the Tukey (1958) jackknife variance estimator using the `ad hoc' finite population correction \eqn{1-n/N} (see Shao and Tu, 1995; Wolter, 2007). If \code{FPC=FALSE}, then the term \eqn{1-n/N} is omitted from the above formula.
   }
 \value{
 The function returns a value for the estimated variance.

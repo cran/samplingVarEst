@@ -49,7 +49,7 @@ VE.Jk.EB.SW2.Corr.Hajek <- function(VecY.s, VecX.s, VecPk.s, nII, VecPi.s, VecCl
                                                     n,
                                                     VectVarEst = double(n),
                                                     PACKAGE = "samplingVarEst")$VectVarEst
-  SQVecPseudo.s                              <- ( (n-1)/n * (EstTheta - VecEstTheta_k) )^2
+  SQVecPseudo.s                              <- ( (1-1/n) * (EstTheta - VecEstTheta_k) )^2
   VectClusterSumSqPseudoValues               <- rowsum(SQVecPseudo.s, group = VecCluLab.s)
   VectPhiClu.sI                              <- VecPi.sI * nII/(nII -1) * (1 - nII/VecCluSize.sI)
   VarianceObservations                       <- sum(VectPhiClu.sI * VectClusterSumSqPseudoValues)

@@ -5,8 +5,8 @@
 \usage{VE.Jk.EB.SW2.RegCoI.Hajek(VecY.s, VecX.s, VecPk.s, nII, VecPi.s,
                          VecCluLab.s, VecCluSize.s)}
 \arguments{
-\item{VecY.s}{vector of the variable of interest Y; its length is equal to \eqn{n}, the total sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecX.s}. There must not be missing values.}
-\item{VecX.s}{vector of the variable of interest X; its length is equal to \eqn{n}, the total sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecY.s}. There must not be missing values.}
+\item{VecY.s}{vector of the variable of interest Y; its length is equal to \eqn{n}, the total sample size. Its length has to be the same as that of \code{VecPk.s} and \code{VecX.s}. There must not be missing values.}
+\item{VecX.s}{vector of the variable of interest X; its length is equal to \eqn{n}, the total sample size. Its length has to be the same as that of \code{VecPk.s} and \code{VecY.s}. There must not be missing values.}
 \item{VecPk.s}{vector of the elements' first-order inclusion probabilities; its length is equal to \eqn{n}, the total sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 \item{nII}{the second stage sample size, i.e. the fixed number of ultimate sampling units that were selected within each cluster. Its size must be less than or equal to the minimum cluster size in the sample.}
 \item{VecPi.s}{vector of the clusters' first-order inclusion probabilities; its length is equal to \eqn{n}, the total sample size. Hence values are expected to be repeated in the utilised sample dataset. Values in \code{VecPi.s} must be greater than zero and less than or equal to one. There must not be missing values.}
@@ -29,7 +29,7 @@ where \eqn{\hat{d}={\sum}_{i\in s}{(1-\pi_{Ii})}}, \eqn{\phi_k = I\{k\in s_{i}\}
 \deqn{\varsigma_{(Ii)}=\frac{n_{I}-1}{n_{I}} (\hat{\alpha}_{Hajek}-\hat{\alpha}_{Hajek(Ii)})}
 \deqn{\varepsilon_{(k)}=\frac{n-1}{n} (\hat{\alpha}_{Hajek}-\hat{\alpha}_{Hajek(k)})}
 where  \eqn{\hat{\alpha}_{Hajek(Ii)}} and \eqn{\hat{\alpha}_{Hajek(k)}} have the same functional form as \eqn{\hat{\alpha}_{Hajek}} but omitting the \eqn{i}-th cluster and the \eqn{k}-th element, respectively, from the sample \eqn{s}.
-Note that this variance estimator utilises implicitly the Hajek (1964) approximations that are designed for large-entropy sampling designs, large samples and large populations, i.e. care should be taken with highly-stratified samples, e.g. Berger (2005).
+Note that this variance estimator implicitly utilises the Hajek (1964) approximations that are designed for large-entropy sampling designs, large samples, and large populations, i.e., care should be taken with highly-stratified samples, e.g. Berger (2005).
   }
 \value{
 The function returns a value for the estimated variance.

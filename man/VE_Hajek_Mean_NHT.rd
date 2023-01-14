@@ -4,7 +4,7 @@
 \description{Computes the Hajek (1964) variance estimator for the Narain (1951); Horvitz-Thompson (1952) point estimator for a population mean.  }
 \usage{VE.Hajek.Mean.NHT(VecY.s, VecPk.s, N)}
 \arguments{
-\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s}. There must not be missing values.}
+\item{VecY.s}{vector of the variable of interest; its length is equal to \eqn{n}, the sample size. Its length has to be the same as that of \code{VecPk.s}. There must not be missing values.}
 \item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 \item{N}{the population size. It must be an integer or a double-precision scalar with zero-valued fractional part.}
 }
@@ -21,7 +21,7 @@ The variance \eqn{V(\hat{t}_{NHT})} can be estimated by the variance estimator (
 \deqn{\hat{V}(\hat{\bar{y}}_{NHT}) = \frac{n}{N^2(n-1)}\left[\sum_{k\in s}\left(\frac{y_k}{\pi_k}\right)^2(1-\pi_k)-\hat{d}\hat{G}^2\right]}
 where \eqn{\hat{d}=\sum_{k\in s}(1-\pi_k)} and \eqn{\hat{G}=\hat{d}^{-1}\sum_{k\in s}(1-\pi)y_k/\pi_k}.
 
-Note that the Hajek (1964) variance approximation is designed for large-entropy sampling designs, large samples and large populations, i.e. care should be taken with highly-stratified samples, e.g. Berger (2005).
+Note that the Hajek (1964) variance approximation is designed for large-entropy sampling designs, large samples, and large populations, i.e., care should be taken with highly-stratified samples, e.g. Berger (2005).
   }
 \value{
 The function returns a value for the estimated variance.

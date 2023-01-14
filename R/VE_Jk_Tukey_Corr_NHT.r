@@ -24,7 +24,7 @@ VE.Jk.Tukey.Corr.NHT <- function(VecY.s, VecX.s, VecPk.s, N, FPC= TRUE)
                                               VectVarEst = double(n),
                                               PACKAGE = "samplingVarEst")$VectVarEst
   EstTheta                             <- Est.Corr.NHT(VecY.s, VecX.s, VecPk.s, N)
-  OUTPUT                               <- (Doublen-1)/Doublen * sum( (EstTheta - VecEstTheta_k) * (EstTheta - VecEstTheta_k) )
+  OUTPUT                               <- (Doublen-1/Doublen) * sum( (EstTheta - VecEstTheta_k) * (EstTheta - VecEstTheta_k) )
   if(FPC                              ){OUTPUT <- (1-Doublen/DoubleN) * OUTPUT                                                             }
   if(OUTPUT<0                         ){warning("The variance estimate contains negative values.")                                         }
   OUTPUT

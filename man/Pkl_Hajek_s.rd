@@ -7,13 +7,13 @@
 \item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 }
 \details{
-Let \eqn{\pi_k} denote the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}, and let \eqn{\pi_{kl}} denote the joint-inclusion probabilities of the \eqn{k}-th and \eqn{l}-th elements in the sample \eqn{s}. If the joint-inclusion probabilities \eqn{\pi_{kl}} are not available, the Hajek (1964) approximation can be used. Note that this approximation is designed for large-entropy sampling designs, large samples and large populations, i.e. care should be taken with highly-stratified samples, e.g. Berger (2005).
+Let \eqn{\pi_k} denote the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}, and let \eqn{\pi_{kl}} denote the joint-inclusion probabilities of the \eqn{k}-th and \eqn{l}-th elements in the sample \eqn{s}. If the joint-inclusion probabilities \eqn{\pi_{kl}} are not available, the Hajek (1964) approximation can be used. Note that this approximation is designed for large-entropy sampling designs, large samples, and large populations, i.e. care should be taken with highly-stratified samples, e.g. Berger (2005).
 
-The sample based version of the Hajek (1964) approximation for the joint-inclusion probabilities \eqn{\pi_{kl}} (implemented by the current function) is:
+The sample-based version of the Hajek (1964) approximation for the joint-inclusion probabilities \eqn{\pi_{kl}} (implemented by the current function) is:
 \deqn{\pi_{kl}  \doteq  \pi_k \pi_l \{1 - \hat{d}^{-1}(1-\pi_k)(1-\pi_l)\}}
 where \eqn{\hat{d} =\sum_{k\in s}(1-\pi_k)}.
 
-The approximation was originally developed for \eqn{d\rightarrow\infty}, under the maximum-entropy sampling design (see Hajek 1981, Theorem 3.3, Ch. 3 and 6), the Rejective Sampling design. It requires that the utilised sampling design be of large entropy. An overview can be found in Berger and Tille (2009). An account of different sampling designs, \eqn{\pi_{kl}} approximations, and approximate variances under large-entropy designs can be found in Tille (2006), Brewer and Donadio (2003), and Haziza, Mecatti, and Rao (2008). Recently, Berger (2011) gave sufficient conditions under which Hajek's results still hold for large-entropy sampling designs that are not the maximum-entropy one.
+The approximation was originally developed for \eqn{d\rightarrow\infty}, under the maximum-entropy sampling design (see Hajek 1981, Theorem 3.3, Ch. 3 and 6), the Rejective Sampling design. It requires that the utilised sampling design is of large entropy. An overview can be found in Berger and Tille (2009). An account of different sampling designs, \eqn{\pi_{kl}} approximations, and approximate variances under large-entropy designs can be found in Tille (2006), Brewer and Donadio (2003), and Haziza, Mecatti, and Rao (2008). Recently, Berger (2011) gave sufficient conditions under which Hajek's results still hold for large-entropy sampling designs that are not the maximum-entropy one.
   }
 \value{
 The function returns a (\eqn{n} by \eqn{n}) square matrix with the estimated joint inclusion probabilities, where \eqn{n} is the sample size.
@@ -45,7 +45,7 @@ pik.U  <- Pk.PropNorm.U(373, oaxaca$HOMES00) #Reconstructs the 1st order incl. p
 s      <- oaxaca$sHOMES00                    #Defines the sample to be used
 #This approximation is only suitable for large-entropy sampling designs
 pikl.s <- Pkl.Hajek.s(pik.U[s==1])           #Approx. 2nd order incl. probs. from s
-#First 5 rows/cols of (sample based) 2nd order incl. probs. matrix
+#First 5 rows/cols of (sample-based) 2nd order incl. probs. matrix
 pikl.s[1:5,1:5]
 }
 \keyword{inclusion probabilities}

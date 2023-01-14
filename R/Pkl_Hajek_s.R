@@ -4,7 +4,7 @@ Pkl.Hajek.s <- function(VecPk.s)
   if(anyNA(VecPk.s)                ){stop("There are missing values in VecPk.s.")                                                                    }
   if(min(VecPk.s)<=0|max(VecPk.s)>1){stop("There are invalid values in VecPk.s.")                                                                    }
   n                                 <- length(VecPk.s)
-  if(all(VecPk.s==1)               ){OUTPUT <- rep(1, times= n)                                                                                      }
+  if(all(VecPk.s==1)               ){OUTPUT <- 1                                                                                                     }
   else
   {
     OUTPUT                          <- .C("Pkl_Hajek_s",

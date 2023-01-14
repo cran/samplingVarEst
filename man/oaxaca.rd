@@ -2,10 +2,10 @@
 \alias{oaxaca}
 \docType{data}
 \title{Municipalities of the state of Oaxaca in Mexico}
-\description{Dataset with information about the free and sovereign state of Oaxaca which is
-located in the south part of Mexico. The dataset contains information of population, surface, 
-indigenous language, agriculture and income from years ranging from 2000 to 2010. The information
-was originally collected and processed by the Mexico's National Institute of Statistics and Geography (INEGI by its name in
+\description{Dataset with information about the free and sovereign state of Oaxaca, which is
+located in the southern part of Mexico. The dataset contains information on population, surface,
+indigenous language, agriculture, and income from years ranging from 2000 to 2010. The information
+was originally collected and processed by Mexico's National Institute of Statistics and Geography (INEGI by its name in
 Spanish, `Instituto Nacional de Estadistica y Geografia', http://www.inegi.org.mx/).}
 \usage{data(oaxaca)}
 \format{
@@ -50,7 +50,7 @@ A data frame with 570 observations on the following 41 variables:
   \item{VOLUBE09}{volume of bean production in tons 2009.}
   \item{sHOMES00}{a sample (column vector of ones and zeros; 1 = selected, 0 = otherwise) of 373 municipalities drawn using the Hajek (1964) maximum-entropy sampling design with inclusion probabilities proportional to the variable HOMES00.}
   \item{sSURFAC}{a sample (column vector of ones and zeros; 1 = selected, 0 = otherwise) of 373 municipalities drawn using the Hajek (1964) maximum-entropy sampling design with inclusion probabilities proportional to the variable SURFAC05.}
-  \item{SIZEDIST}{the size of the district, i.e. the number of municipalities in each district.}
+  \item{SIZEDIST}{the size of the district, i.e., the number of municipalities in each district.}
   \item{sSW_10_3}{a sample (column vector of ones and zeros; 1 = selected, 0 = otherwise) of 30 municipalities drawn using a self-weighted two-stage sampling design. The first stage draws 10 districts using the Hajek (1964) maximum-entropy sampling design with clusters' inclusion probabilities proportional to the size of the clusters (variable SIZEDIST). The second stage draws 3 municipalities within the selected districts at the first stage, using equal-probability without-replacement sampling.}
   }
 }

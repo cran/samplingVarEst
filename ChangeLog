@@ -1,3 +1,78 @@
+version 1.5 2023-01-13
+
+
+ - Some minor grammatical errors in the user's manual where fixed.
+
+ - A minor correction to the 'Pkl.Hajek.s()' and 'Pkl.Hajek.U()' functions was made to improve speed for the particular (and very rare case) of having all ones in the input vector of the first-order inclusion probabilities.
+
+ - A simple performance optimization is made in all routines, replacing 'rep(1, times = n)' by 'rep.int(1, n)' as the latter is a little bit faster. Below an example using the microbenchmark package:
+
+    > # Loading packages for comparison
+    > require(microbenchmark)
+    > require(ggplot2)
+    > n <- 10000
+    > identical(rep(1,times=n), rep.int(1,n))
+    [1] TRUE
+    > # Testing
+    > compare <- microbenchmark(rep(1,times= n), rep.int(1,n), times=10000)
+    > # Printing the comparison results
+    > print(compare)
+    Unit: microseconds
+                  expr    min     lq     mean median     uq      max neval
+     rep(1, times = n) 10.700 11.000 15.43633 11.101 11.300 4788.100 10000
+         rep.int(1, n)  7.201  8.001 11.41625  8.202  8.501 3781.301 10000
+    > # Plot of the comparison results
+    > autoplot(compare)
+
+ - Another simple performance optimization is made in all routines, replacing '(n-1)/n' by '1-1/n' as the latter takes almost half of the computing time. This also applies for '(Doublen-1)/Doublen' replaced by 'Doublen-1/Doublen'. Below an example using the microbenchmark package:
+
+    > require(microbenchmark)
+    > require(ggplot2)
+    > n <- 10000
+    > print((n-1)/n)
+    [1] 0.9999
+    > print(1-1/n)
+    [1] 0.9999
+    > identical((n-1)/n, 1-1/n)
+    [1] TRUE
+    > # Testing
+    > compare <- microbenchmark((n-1)/n, 1-1/n, times=10000)
+    > # Printing the comparison results
+    > print(compare)
+    Unit: nanoseconds
+          expr min  lq   mean median  uq  max neval
+     (n - 1)/n 200 200 244.31    200 300 3900 10000
+       1 - 1/n 100 100 126.55    100 100 1400 10000
+    > # Plot of the comparison results
+    > autoplot(compare)
+
+ - A simple performance optimization is made in some routines (VE.Hajek.Mean.NHT, VE.HT.Mean.NHT, VE.SYG.Mean.NHT), replacing '1/(n * n)' by '1/n/n' as the latter is a little bit faster. Below an example using the microbenchmark package:
+
+    > # Loading packages for comparison
+    > require(microbenchmark)
+    > require(ggplot2)
+    > n <- 123
+    > print(1/(n*n))
+    [1] 6.609822e-05
+    > print(1/n/n)
+    [1] 6.609822e-05
+    > identical(1/(n*n), 1/n/n)
+    [1] FALSE
+    > # Testing
+    > compare <- microbenchmark(1/(n*n), 1/n/n, times=10000)
+    > # Printing the comparison results
+    > print(compare)
+    Unit: nanoseconds
+          expr min  lq   mean median  uq   max neval
+     1/(n * n) 200 200 260.57    200 300 41400 10000
+         1/n/n 100 100 190.43    200 200 19600 10000
+    > # Plot of the comparison results
+    > autoplot(compare)
+
+
+
+
+
 version 1.4 2019-07-25
 
 
@@ -73,7 +148,7 @@ version 1.1 2017-07-10
 version 1.0-2 2016-06-12
 
 
- - Negative values of the MOS variable 'VecMOS.U' are converted to zero before when computing inclusion probabilities using the function 'Pk.PropNorm.U()'.
+ - Negative values of the MOS variable 'VecMOS.U' are converted to zero before computing inclusion probabilities using the function 'Pk.PropNorm.U()'.
  
  - Some polishing of the user's manual.
 
@@ -108,7 +183,7 @@ version 0.9-8 2013-12-31
  
  - Restrictions on the input of n and N (sample and population sizes) are relaxed. It is no longer needed that they are (formally) integers. They now can be double-precision scalars with zero-valued fractional parts.
  
- - When using the Tukey's Jackknife it is now optional to utilise a finite population correction (PFC). A logical argument that indicates whether to use it or not was added to those functions that implement Tukey's jackknife variance estimators.
+ - When using the Tukey's Jackknife it is now optional to utilise a finite population correction (FPC). A logical argument that indicates whether to use it or not was added to those functions that implement Tukey's jackknife variance estimators.
  
  - Some polishing of the user's manual.
 

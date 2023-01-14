@@ -4,8 +4,8 @@
 \description{Computes the Berger (2007) unequal probability jackknife variance estimator for the estimator of the intercept regression coefficient using the Hajek (1971) point estimator.  }
 \usage{VE.Jk.B.RegCoI.Hajek(VecY.s, VecX.s, VecPk.s)}
 \arguments{
-\item{VecY.s}{vector of the variable of interest Y; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecX.s}. There must not be missing values.}
-\item{VecX.s}{vector of the variable of interest X; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecY.s}. There must not be missing values.}
+\item{VecY.s}{vector of the variable of interest Y; its length is equal to \eqn{n}, the sample size. Its length has to be the same as that of \code{VecPk.s} and \code{VecX.s}. There must not be missing values.}
+\item{VecX.s}{vector of the variable of interest X; its length is equal to \eqn{n}, the sample size. Its length has to be the same as that of \code{VecPk.s} and \code{VecY.s}. There must not be missing values.}
 \item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
 }
 \details{
@@ -25,7 +25,7 @@ and
 with
 \deqn{\tilde{w}_k = \frac{w_k}{\sum_{l\in s} w_l}}
 and where \eqn{\hat{\alpha}_{Hajek(k)}} has the same functional form as \eqn{\hat{\alpha}_{Hajek}} but omitting the \eqn{k}-th element from the sample \eqn{s}.
-Note that this variance estimator utilises implicitly the Hajek (1964) approximations that are designed for large-entropy sampling designs, large samples and large populations, i.e. care should be taken with highly-stratified samples, e.g. Berger (2005).
+Note that this variance estimator implicitly utilises the Hajek (1964) approximations that are designed for large-entropy sampling designs, large samples, and large populations, i.e., care should be taken with highly-stratified samples, e.g. Berger (2005).
   }
 \value{
 The function returns a value for the estimated variance.

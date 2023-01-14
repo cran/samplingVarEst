@@ -4,10 +4,10 @@
 \description{Computes the Quenouille(1956); Tukey (1958) jackknife variance estimator for the estimator of a correlation coefficient of two variables using the Narain (1951); Horvitz-Thompson (1952) point estimator.  }
 \usage{VE.Jk.Tukey.Corr.NHT(VecY.s, VecX.s, VecPk.s, N, FPC= TRUE)}
 \arguments{
-\item{VecY.s}{vector of the variable of interest Y; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecX.s}. There must not be missing values.}
-\item{VecX.s}{vector of the variable of interest X; its length is equal to \eqn{n}, the sample size. Its length has to be the same as the length of \code{VecPk.s} and \code{VecY.s}. There must not be missing values.}
+\item{VecY.s}{vector of the variable of interest Y; its length is equal to \eqn{n}, the sample size. Its length has to be the same as that of \code{VecPk.s} and \code{VecX.s}. There must not be missing values.}
+\item{VecX.s}{vector of the variable of interest X; its length is equal to \eqn{n}, the sample size. Its length has to be the same as that of \code{VecPk.s} and \code{VecY.s}. There must not be missing values.}
 \item{VecPk.s}{vector of the first-order inclusion probabilities; its length is equal to \eqn{n}, the sample size. Values in \code{VecPk.s} must be greater than zero and less than or equal to one. There must not be missing values.}
-\item{N}{the population size. It must be an integer or a double-precision scalar with zero-valued fractional part. This information is also utilised for the finite population correction, see \code{FPC} below.}
+\item{N}{the population size. It must be an integer or a double-precision scalar with zero-valued fractional part. This information is also utilised for the finite population correction; see \code{FPC} below.}
 \item{FPC}{logical value. If an ad hoc finite population correction \eqn{FPC=1-n/N} is to be used. The default is TRUE.}
 }
 \details{
@@ -20,7 +20,7 @@ where \eqn{\hat{\bar{y}}_{NHT}} is the Narain (1951); Horvitz-Thompson (1952) es
 and \eqn{w_k=1/\pi_k} with \eqn{\pi_k} denoting the inclusion probability of the \eqn{k}-th element in the sample \eqn{s}. The variance of \eqn{\hat{C}} can be estimated by the Quenouille(1956); Tukey (1958) jackknife variance estimator (implemented by the current function):
 \deqn{\hat{V}(\hat{C}) = \left(1-\frac{n}{N}\right)\frac{n-1}{n}\sum_{k\in s} \left( \hat{C}_{(k)}-\hat{C} \right)^2}
 where \eqn{\hat{C}_{(k)}} has the same functional form as \eqn{\hat{C}} but omitting the \eqn{k}-th element from the sample \eqn{s}.
-Note that we are implementing the Tukey (1958) jackknife variance estimator using the `ad hoc' finite population correction \eqn{1-n/N} (see Shao and Tu, 1995; Wolter, 2007). If \code{FPC=FALSE} then the term \eqn{1-n/N} is ommited from the above formula.
+We are implementing the Tukey (1958) jackknife variance estimator using the `ad hoc' finite population correction \eqn{1-n/N} (see Shao and Tu, 1995; Wolter, 2007). If \code{FPC=FALSE}, then the term \eqn{1-n/N} is omitted from the above formula.
   }
 \value{
 The function returns a value for the estimated variance.
