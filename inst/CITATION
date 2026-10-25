@@ -1,19 +1,17 @@
-citHeader("To cite package 'samplingVarEst' in publications use:")
-
 year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
 vers <- paste("R package version", meta$Version)
 
-citEntry(entry = "Manual",
-         title = "samplingVarEst: Sampling Variance Estimation",
-         author = personList(as.person("Emilio Lopez Escobar"),
-                             as.person("Ernesto Barrios Zamudio"),
-                             as.person("Juan Francisco Munoz Rosas")),
-         year = year,
-         note = vers,
-
-         textVersion =
-         paste0("Emilio Lopez Escobar, Ernesto Barrios Zamudio and Juan Francisco Munoz Rosas (",
-                year,
-                "). samplingVarEst: Sampling Variance Estimation. ",
-                vers, "."))
-
+bibentry(
+  bibtype = "Manual",
+  header  = "To cite package 'samplingVarEst' in publications use:",
+  title   = "samplingVarEst: Sampling Variance Estimation",
+  author  = c(person("Emilio", "Lopez Escobar"),
+              person("Ernesto", "Barrios Zamudio"),
+              person("Juan Francisco", "Munoz Rosas")),
+  year    = year,
+  note    = vers,
+  url     = "https://CRAN.R-project.org/package=samplingVarEst",
+  textVersion = paste0("Emilio Lopez Escobar, Ernesto Barrios Zamudio and Juan Francisco Munoz Rosas (",
+                       year, "). samplingVarEst: Sampling Variance Estimation. ", vers,
+                       ". https://CRAN.R-project.org/package=samplingVarEst")
+)

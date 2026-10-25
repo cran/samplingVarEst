@@ -1,7 +1,6 @@
 Est.EmpDistFunc.Hajek <- function(VecY.s, VecPk.s, t)
 {
   if(length(t) != 1                  ){stop("Value of t must be a scalar, i.e. a vector of length 1.")                            }
-  if(t%%1 != 0                       ){stop("t must be an integer or a double-precision scalar.")                                 }
   if(! is.vector(VecY.s)             ){stop("VecY.s must be a vector.")                                                           }
   if(! is.vector(VecPk.s)            ){stop("VecPk.s must be a vector.")                                                          }
   if(anyNA(VecPk.s)                  ){stop("There are missing values in VecPk.s.")                                               }

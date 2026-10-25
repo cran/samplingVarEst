@@ -26,7 +26,7 @@ VE.Lin.SYG.Ratio <- function(VecY.s, VecX.s, VecPk.s, MatPkl.s)
                                              n,
                                              PointEst = double(1),
                                              PACKAGE = "samplingVarEst")$PointEst
-  VecLinPseudo.s                      <- (VecY.s - EstTheta * VecX.s) / Txhat
+  VecLinPseudo.s                      <- (VecY.s - EstTheta * VecX.s) / Txhat / VecPk.s
   OUTPUT                              <- .C("VE_SYG_form",
                                              as.double(VecLinPseudo.s),
                                              as.double(VecPk.s),

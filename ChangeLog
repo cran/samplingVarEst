@@ -1,3 +1,24 @@
+version 1.6 2026-10-24
+
+
+ - BUG FIX (results change). The Tukey jackknife variance estimators ('VE.Jk.Tukey.Ratio()', 'VE.Jk.Tukey.Corr.Hajek()', 'VE.Jk.Tukey.Corr.NHT()', 'VE.Jk.Tukey.RegCo.Hajek()', 'VE.Jk.Tukey.RegCoI.Hajek()', and hence 'VE.Jk.Tukey.Mean.Hajek()' and 'VE.Jk.Tukey.Total.Hajek()') returned (n + 1) times the documented value in version 1.5. The scaling factor was written as 'Doublen-1/Doublen' (i.e. n - 1/n) instead of '(1-1/Doublen)' (i.e. (n-1)/n). Versions 0.9 to 1.4 were correct.
+
+ - BUG FIX (results change). The linearisation variance estimators 'VE.Lin.HT.Ratio()' and 'VE.Lin.SYG.Ratio()' omitted the weights w_k = 1/pi_k in the linearised pseudo-values, i.e. they computed sum_k sum_l [(pi_kl - pi_k pi_l)/pi_kl] u_k u_l instead of the documented sum_k sum_l [(pi_kl - pi_k pi_l)/pi_kl] w_k u_k w_l u_l. This affected all versions since 0.9-8.
+
+ - BUG FIX (results change). In the self-weighted two-stage jackknife estimators 'VE.Jk.EB.SW2.*()' the within-cluster component was computed with 'rowsum()', which orders the groups by sorted label, whereas the cluster-level quantities were kept in order of first appearance. When the cluster labels did not appear in increasing order (as in the 'oaxaca' example, which is sorted by municipality, not by district) the phi_i term of one cluster multiplied the squared pseudo-values of another. The estimates now do not depend on the order of the rows. This affected all versions since 0.9.
+
+ - 'Est.EmpDistFunc.Hajek()' and 'Est.EmpDistFunc.NHT()' no longer require the evaluation point 't' to be an integer.
+
+ - 'Pk.PropNorm.U()' now stops with an informative message when 'n' is not a scalar or exceeds the number of units with a positive value of 'VecMOS.U' (previously it failed with "missing value where TRUE/FALSE needed").
+
+ - Regression tests (tests/regresion.R) were added. They compare the above functions with the documented formulae computed in plain R and check invariance to the order of the sample rows.
+
+ - Scope of the above corrections. No other function is affected: the point estimators, the HT, SYG and Hajek variance forms, the Berger (2007), Campbell/Berger-Skinner and Escobar-Berger replicate estimators and the joint-inclusion-probability approximations return exactly the same values as in version 1.5. The two-stage estimators 'VE.Jk.EB.SW2.*()' were correct whenever the cluster labels appeared in increasing order in the sample (e.g. data sorted by PSU). Users of 'VE.Jk.Tukey.*()' in version 1.5 and of 'VE.Lin.HT.Ratio()' / 'VE.Lin.SYG.Ratio()' in any version should recompute those variances.
+
+
+
+
+
 version 1.5 2023-01-13
 
 

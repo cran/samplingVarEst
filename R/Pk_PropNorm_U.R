@@ -5,7 +5,9 @@ Pk.PropNorm.U <- function(n, VecMOS.U)
   if(any(VecMOS.U==0)     ){warning("There are zero values in VecMOS.U.")                                                                          }
   if(min(VecMOS.U)<0      ){warning("There are negative values in VecMOS.U. These are treated as zero.")                                           }
   VecMOS.U[VecMOS.U<0]     <- 0
+  if(length(n) != 1       ){stop("Value of n must be a scalar, i.e. a vector of length 1.")                                                        }
   if(n%%1 != 0            ){stop("n must be an integer or a double-precision scalar with zero-valued fractional part.")                            }
+  if(n > sum(VecMOS.U>0)  ){stop("n is larger than the number of units with positive values in VecMOS.U.")                                         }
   N                        <- length(VecMOS.U)
   OUTPUT                   <- .C("Pk_PropNorm_U",
                                       as.integer(n),

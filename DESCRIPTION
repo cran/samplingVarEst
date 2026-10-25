@@ -1,11 +1,13 @@
 Package: samplingVarEst
-Version: 1.5
-Date: 2023-01-13
+Version: 1.6
+Date: 2026-10-24
 Title: Sampling Variance Estimation
-Author: Emilio Lopez Escobar [aut, cre, cph] <emilio@quantos.mx>,
-        Ernesto Barrios Zamudio [ctb] <ebarrios@itam.mx>,
-        Juan Francisco Munoz Rosas [ctb] <jfmunoz@go.ugr.es>
-Maintainer: Emilio Lopez Escobar <emilio@quantos.mx>
+Authors@R: c(person("Emilio", "Lopez Escobar", role = c("aut", "cre", "cph"),
+                    email = "emilio@quantos.mx"),
+             person("Ernesto", "Barrios Zamudio", role = "ctb",
+                    email = "ebarrios@itam.mx"),
+             person("Juan Francisco", "Munoz Rosas", role = "ctb",
+                    email = "jfmunoz@go.ugr.es"))
 Description: Functions to calculate some point estimators and estimate their variance under unequal probability sampling without replacement. Single and two-stage sampling designs are considered. Some approximations for the second-order inclusion probabilities (joint inclusion probabilities) are available (sample and population based). A variety of Jackknife variance estimators are implemented. Almost every function is written in C (compiled) code for faster results. The functions incorporate some performance improvements for faster results with large datasets.
 Classification/MSC: 62D05, 62F40, 62G09, 62H12
 Classification/JEL: C13, C15, C42, C83
@@ -14,6 +16,10 @@ Depends: R (>= 3.1.0)
 License: GPL (>= 2)
 URL: https://www.quantos.mx/, https://www.itam.mx/
 NeedsCompilation: yes
-Packaged: 2023-01-14 04:02:31 UTC; E
+Packaged: 2026-10-25 01:38:14 UTC; EmilioL<c3><b3>pezEscobar
+Author: Emilio Lopez Escobar [aut, cre, cph],
+  Ernesto Barrios Zamudio [ctb],
+  Juan Francisco Munoz Rosas [ctb]
+Maintainer: Emilio Lopez Escobar <emilio@quantos.mx>
 Repository: CRAN
-Date/Publication: 2023-01-14 09:30:06 UTC
+Date/Publication: 2026-10-25 09:50:09 UTC
